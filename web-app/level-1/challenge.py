@@ -10,7 +10,7 @@ def hello():
     <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>Hello World</title>
+        <title>Hello CodeSprouts!</title>
         <style>
             body {
                 background-color: #f0f0f0;
