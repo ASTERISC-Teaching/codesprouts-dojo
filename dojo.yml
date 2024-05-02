@@ -1,40 +1,12 @@
-id: kanak
+id: codesprout
 
-name: Kanak's Awesome Dojo
+name: Codesprouts's Cybersecurity Dojo
 
 description: |
   This dojo is super chill.
   <script>alert(1)</script>
 
 modules:
-  - id: intro-to-computing
-    name: Intro to Computing
-
-    challenges:
-
-      - id: level-1
-        name: Level 1
-
-      - id: level-2
-        name: Level 2
-
-  - id: custom
-    name: custom
-
-    image: test-custom
-
-    challenges:
-      - id: custom
-        name: custom
-  
   - id: web-app
     challenges:
       - id: level-1
-
-pages:
-  - static-page
-  - dynamic-page
-  - dynamic-page-symlink
-  - python_reference.pdf
-  - myzip.zip
-  - redirect
