@@ -46,7 +46,7 @@ def hello():
     <body>
         <div class="container">
             <div class="content">
-                <h1>Hello, World!</h1>
+                <h1>Hello, CodeSprouts!</h1>
                 <button onclick="fetchData()">Fetch Data</button>
                 <div id="data-container"></div>
             </div>
