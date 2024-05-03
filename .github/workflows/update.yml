@@ -8,5 +8,5 @@ jobs:
     steps:
       - uses: pwncollege/dojo-update@v1
         with:
-          dojo: kanak~a5d0c869
+          dojo: codesprout~a2cb8d41
           update_code: ${{ secrets.UPDATE_CODE }}
