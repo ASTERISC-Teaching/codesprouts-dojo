@@ -1,2 +1,2 @@
 #!/bin/sh
-python /challenge/challenge.py &
+# python /challenge/challenge.py &
