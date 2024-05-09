@@ -59,7 +59,9 @@ app.use("/users", userRoutes);
 app.use("/posts", postRoutes);
 
 /* MONGOOSE SETUP */
-const PORT = process.env.PORT || 6001;
+const PORT = process.env.PORT || 80;
+app.listen(PORT, () => console.log(`Server Port: ${PORT}`));
+/*
 mongoose
   .connect(process.env.MONGO_URL, {
     useNewUrlParser: true,
@@ -68,10 +70,9 @@ mongoose
   .then(() => {
     app.listen(PORT, () => console.log(`Server Port: ${PORT}`));
 
-    /* ADD DATA ONE TIME */
     User.insertMany(users);
     Post.insertMany(posts);
   })
   .catch((error) => console.log(`${error} did not connect`));
-
+*/
 
