@@ -5,6 +5,6 @@
 pushd package
 sudo mkdir /data
 sudo mkdir /data/db
-sudo mongod &
 cp -r /usr/lib/node_modules node_modules
+sudo mongod &
 # nodemon index.js
