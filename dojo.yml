@@ -4,7 +4,8 @@ name: Codesprouts's Cybersecurity Dojo
 
 description: |
   This dojo is super chill.
-  <script>alert(1)</script>
+
+type: more
 
 modules:
   - id: web-app
