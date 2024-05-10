@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Path to the directory containing files to be searched
-search_dir="/package/data"
+search_dir="/challenge/package/data"
 
 # Path to the file containing the replacement value
 flag_file="/flag"
