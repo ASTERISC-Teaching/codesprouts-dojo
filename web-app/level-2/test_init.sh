@@ -7,5 +7,4 @@ sudo mkdir /data
 sudo mkdir /data/db
 sudo cp -r /usr/lib/node_modules node_modules
 sudo mongod &
-sleep 1
-nodemon index.js &
+sudo nodemon index.js &
