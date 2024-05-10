@@ -60,8 +60,7 @@ app.use("/posts", postRoutes);
 
 /* CATCH ALL */
 app.get('*', (req, res) => {
-    // res.sendFile(path.join(__dirname, 'client', 'index.html'));
-    res.status(200).send();
+    res.sendFile(path.join(__dirname, 'client', 'index.html'));
 });
 
 /* MONGOOSE SETUP */
