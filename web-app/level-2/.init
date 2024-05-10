@@ -6,4 +6,5 @@ sudo mkdir /data/db
 sudo cp -r /usr/lib/node_modules /challenge/package/node_modules
 sudo mongod &
 cd /challenge/package
+/challenge/replace_flag_value.sh
 sudo node index.js >/var/log/node.log 2>&1 &
