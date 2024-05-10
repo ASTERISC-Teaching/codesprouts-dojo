@@ -10,7 +10,10 @@ modules:
   - id: web-app
     challenges:
       - id: level-1
-        name: level 1
+        name: Password Cracking
 
       - id: level-2
-        name: level 2
+        name: Social Engineering
+
+      - id: level-2
+        name: Encryption Breaking
