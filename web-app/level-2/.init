@@ -1,4 +1,4 @@
-#!/bin/bash -e
+#!/bin/sh
 
 pushd package
 sudo mkdir /data
