@@ -1,3 +1,5 @@
 #!/bin/sh
 #
 # THIS SCRIPT EXECUTES ON BOOT
+
+cp /challenges/challenge.py ~/Desktop/password.py
