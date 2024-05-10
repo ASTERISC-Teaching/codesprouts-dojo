@@ -14,7 +14,7 @@ modules:
         name: Password Cracking
 
       - id: level-2
-        name: Social Engineering
+        name: Information Gathering
 
       - id: level-3
         name: Encryption Breaking
