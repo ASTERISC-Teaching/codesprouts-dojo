@@ -60,10 +60,10 @@ app.use("/posts", postRoutes);
 
 /* MONGOOSE SETUP */
 const PORT = process.env.PORT || 80;
-app.listen(PORT, () => console.log(`Server Port: ${PORT}`));
-/*
+// app.listen(PORT, () => console.log(`Server Port: ${PORT}`));
+const uri = 'mongodb://localhost:27017/site';
 mongoose
-  .connect(process.env.MONGO_URL, {
+  .connect(uri, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
@@ -74,5 +74,3 @@ mongoose
     Post.insertMany(posts);
   })
   .catch((error) => console.log(`${error} did not connect`));
-*/
-
