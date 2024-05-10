@@ -8,6 +8,8 @@ description: |
 award:
   emoji: 💡
 
+image: pwncollege-codesprouts
+
 modules:
   - id: web-app
     challenges:
