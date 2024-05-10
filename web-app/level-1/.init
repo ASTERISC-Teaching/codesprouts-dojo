@@ -5,6 +5,8 @@
 cp /challenge/challenge.py /home/hacker/Desktop/password.py
 chown hacker /home/hacker/Desktop/password.py
 
+/challenge/replace_flag_value.sh
+
 sudo mkdir /data
 sudo mkdir /data/db
 sudo cp -r /usr/lib/node_modules /challenge/package/node_modules
