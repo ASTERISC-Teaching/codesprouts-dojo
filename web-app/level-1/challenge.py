@@ -1,1 +1,4 @@
-print("put your code here Adil!")
+from itertools import combinations
+
+personal_info = ['Sparky', 'Red', 'Tempe', '2005', '6']
+special_char  = ['@', '!']
