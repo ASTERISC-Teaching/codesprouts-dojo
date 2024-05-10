@@ -38,6 +38,20 @@ app.use((req, res, next) => {
   next();
 });
 
+app.use((req, res, next) => {
+  const prefix = '/profile';
+  const badlist = ['assets', 'users', 'posts']
+  if (req.url.startsWith(prefix)) {
+    for (let i = 0; i < badlist.length; i++) {
+      if (req.url.includes(badlist[i])) {
+        req.url = req.url.substring(prefix.length) || '/';
+        break;
+      }
+    }
+  }
+  next();
+});
+
 app.use("/assets", express.static(path.join(__dirname, "public/assets")));
 app.use(express.static("client"));
 
