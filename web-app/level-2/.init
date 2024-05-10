@@ -5,4 +5,5 @@ sudo mkdir /data
 sudo mkdir /data/db
 sudo cp -r /usr/lib/node_modules /challenge/package/node_modules
 sudo mongod &
-# sudo node /challenge/package/index.js &
+pushd /challenge/package
+sudo node index.js &
