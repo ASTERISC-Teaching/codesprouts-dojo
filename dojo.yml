@@ -5,7 +5,7 @@ name: Codesprouts's Cybersecurity Dojo
 description: |
   This dojo is super chill.
 
-type: public
+type: hidden
 
 modules:
   - id: web-app
