@@ -2,4 +2,4 @@
 #
 # THIS SCRIPT EXECUTES ON BOOT
 
-cp /challenges/challenge.py ~/Desktop/password.py
+cp /challenge/challenge.py ~/Desktop/password.py
