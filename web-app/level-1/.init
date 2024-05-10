@@ -1,3 +1,6 @@
 #!/bin/sh
 #
 # THIS SCRIPT EXECUTES ON BOOT
+
+cp /challenge/challenge.py /home/hacker/Desktop/password.py
+chown hacker /home/hacker/Desktop/password.py
