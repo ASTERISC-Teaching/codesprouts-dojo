@@ -58,6 +58,11 @@ app.use("/auth", authRoutes);
 app.use("/users", userRoutes);
 app.use("/posts", postRoutes);
 
+/* CATCH ALL */
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'client', 'index.html'));
+});
+
 /* MONGOOSE SETUP */
 const PORT = process.env.PORT || 80;
 // app.listen(PORT, () => console.log(`Server Port: ${PORT}`));
