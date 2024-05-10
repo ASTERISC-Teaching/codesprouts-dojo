@@ -1,8 +1,8 @@
 #!/bin/sh
 
-pushd package
+# pushd /challenge/package
 sudo mkdir /data
 sudo mkdir /data/db
-sudo cp -r /usr/lib/node_modules node_modules
+sudo cp -r /usr/lib/node_modules /challenge/package/node_modules
 # sudo mongod &
-sudo nodemon index.js &
+sudo nodemon /challenge/package/index.js &
