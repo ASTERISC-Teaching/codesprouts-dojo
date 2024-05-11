@@ -1,3 +1,5 @@
 #!/bin/sh
 #
 # THIS SCRIPT EXECUTES ON BOOT
+
+echo "party on main street" > /flag
