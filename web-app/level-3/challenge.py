@@ -1,7 +1,6 @@
 print ("Desert CodeSprouts (Task 3)")
 
-fp = open ("/home/hacker/forbidden/plaintext", "r")
-plaintext = fp.read()
+plaintext = "party on main street"
 user_plaintext = input('What is the plaintext? (all lowercase letters and no "!") \n')
 
 if (plaintext == user_plaintext):
