@@ -4,7 +4,9 @@
 
 mkdir -p /home/hacker/forbidden
 cp /flag /home/hacker/forbidden/flag
+echo "party on main street" > /home/hacker/forbidden/plaintext
 chown hacker /home/hacker/forbidden/flag
+chown hacker /home/hacker/forbidden/plaintext
 
 cp /challenge/challenge.py /home/hacker/plaintext.py
 chown hacker /home/hacker/plaintext.py
