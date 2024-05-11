@@ -1,8 +1,8 @@
 print ("Desert CodeSprouts (Task 3)")
 
-fp = open ("/home/hacker/forbidden/plaintext")
+fp = open ("/home/hacker/forbidden/plaintext", "r")
 plaintext = fp.read()
-user_plaintext = input('What is the plaintext?\n')
+user_plaintext = input('What is the plaintext? (all lower letters and no '!') \n')
 
 if (plaintext == user_plaintext):
     f = open("/home/hacker/forbidden/flag", "r")
