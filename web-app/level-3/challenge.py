@@ -1,6 +1,6 @@
 print ("Desert CodeSprouts (Task 3)")
 
-plaintext = "party on main street"
+plaintext = "party at main street"
 user_plaintext = input('What is the plaintext? (all lowercase letters and no "!") \n')
 
 if (plaintext == user_plaintext):
