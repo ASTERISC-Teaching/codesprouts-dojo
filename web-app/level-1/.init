@@ -2,8 +2,8 @@
 #
 # THIS SCRIPT EXECUTES ON BOOT
 
-cp /challenge/challenge.py /home/hacker/Desktop/password.py
-chown hacker /home/hacker/Desktop/password.py
+cp /challenge/challenge.py /home/hacker/password.py
+chown hacker /home/hacker/password.py
 
 /challenge/replace_flag_value.sh
 
