@@ -5,3 +5,7 @@
 mkdir -p /home/hacker/forbidden
 cp /flag /home/hacker/forbidden/flag
 chown hacker /home/hacker/forbidden/flag
+
+cp /challenge/challenge.py /home/hacker/plaintext.py
+chown hacker /home/hacker/plaintext.py
+chmod -r /home/hacker/plaintext.py
