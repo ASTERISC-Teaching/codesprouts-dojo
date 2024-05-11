@@ -2,5 +2,6 @@
 #
 # THIS SCRIPT EXECUTES ON BOOT
 
-cp /flag /home/hacker/flag
-chown hacker /home/hacker/flag
+mkdir -p /home/hacker/forbidden
+cp /flag /home/hacker/forbidden/flag
+chown hacker /home/hacker/forbidden/flag
