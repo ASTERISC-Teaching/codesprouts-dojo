@@ -251,7 +251,7 @@ export const posts = [
     },
 
 { _id: new mongoose.Types.ObjectId(), userId: userIds[5],
-    firstName: "Olivia", lastName: "", location: "Phoenix, AZ", description: "Duh zh vwloo rq iru wkh vkrsslqj wuls? 🛍️ Just checking in about our weekend plans. ", picturePath: "", userPicturePath: "", likes: new Map([ [userIds[0], true], [userIds[4], true], [userIds[12], true], ]), comments: [ "Absolutely! I'll be there with bells on. ", "HERE" ], },
+    firstName: "Olivia", lastName: "", location: "Phoenix, AZ", description: "Duh zh vwloo rq iru wkh vkrsslqj wuls? 🛍️ Just checking in about our weekend plans. ", picturePath: "", userPicturePath: "", likes: new Map([ [userIds[0], true], [userIds[4], true], [userIds[12], true], ]), comments: [ "Absolutely! I'll be there with bells on. " ], },
 
 { _id: new mongoose.Types.ObjectId(), userId: userIds[11], firstName: "Violet", lastName: "", location: "Phoenix, AZ", description: "I'm thinking about dying my hair purple. Thoughts?", picturePath: "", userPicturePath: "", likes: new Map([ [userIds[3], true], [userIds[9], true], [userIds[17], true], ]), comments: [ "That would look so cool! Go for it!", "Maybe start with a temporary dye to see if you like it?", ], },
 
