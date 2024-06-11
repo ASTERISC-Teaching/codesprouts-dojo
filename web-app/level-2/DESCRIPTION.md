@@ -6,6 +6,4 @@ You will need to explore Jenna's home profile, search through posts, and examine
 
 The flag will be a comment in the post of the encrypted message for level 3.
 
-> [!WARNING]
-> 
-> Please make sure to note down the encrypted message somewhere as it will not be available in level 3.
+__Please make sure to note down the encrypted message somewhere as it will not be available in level 3.__
