@@ -7,3 +7,5 @@ You will need to explore Jenna's home profile, search through posts, and examine
 The flag will be a comment in the post of the encrypted message for level 3.
 
 __Please make sure to note down the encrypted message somewhere as it will not be available in level 3.__
+
+(After starting the challenge the web app can be found at https://pwn.college/workspace/challenge, inside your browser, or, http://challenge.localhost/workspace/challenge inside the VNC Desktop)
