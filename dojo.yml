@@ -1,11 +1,11 @@
-id: codesprout
+id: codesprouts
 
-name: Codesprouts's
+name: Desert CodeSprouts
 
 award:
   emoji: 💡
 
-image: pwncollege-codesprouts
+image: pwncollege/codesprouts-dojo
 
 type: public
 
