@@ -1,11 +1,26 @@
-FROM pwncollege-challenge
+# syntax=docker/dockerfile:1
 
-USER root
-WORKDIR /
+FROM ubuntu:20.04
 
-RUN curl -fsSL https://deb.nodesource.com/setup_20.x | /bin/bash /dev/stdin
-RUN apt-get install -y mongodb nodejs
-RUN npm install -g nodemon bcrypt body-parser cors dotenv express gridfs-stream helmet jsonwebtoken mongoose morgan multer multer-gridfs-storage
+ADD --chmod=4755 https://deb.nodesource.com/setup_20.x /tmp/setup_20.x
+RUN /tmp/setup_20.x && rm /tmp/setup_20.x
 
-USER hacker
-WORKDIR /home/hacker
+RUN apt-get update && apt-get install -y --no-install-recommends \
+      mongodb \
+      nodejs \
+  && rm -rf /var/lib/apt/lists/*
+
+RUN npm install -g \
+    bcrypt \
+    body-parser \
+    cors \
+    dotenv \
+    express \
+    gridfs-stream \
+    helmet \
+    jsonwebtoken \
+    mongoose@8.3.1 \
+    morgan \
+    multer \
+    multer-gridfs-storage \
+    nodemon

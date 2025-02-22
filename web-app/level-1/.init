@@ -1,15 +1,13 @@
 #!/bin/sh
-#
-# THIS SCRIPT EXECUTES ON BOOT
 
 cp /challenge/challenge.py /home/hacker/password.py
 chown hacker /home/hacker/password.py
 
 /challenge/replace_flag_value.sh
 
-sudo mkdir /data
-sudo mkdir /data/db
-sudo cp -r /usr/lib/node_modules /challenge/package/node_modules
-sudo mongod &
+mkdir -p /data/db
+mongod &
+
 cd /challenge/package
-sudo node index.js >/var/log/node.log 2>&1 &
+ln -s /usr/lib/node_modules .
+node index.js >/var/log/node.log 2>&1 &
