@@ -20,3 +20,8 @@ modules:
 
       - id: level-3
         name: Encryption Breaking
+
+  - id: cia 
+    challenges:
+      - id: level-4
+        name: Cipher Cracking
