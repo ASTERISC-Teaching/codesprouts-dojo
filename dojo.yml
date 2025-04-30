@@ -25,3 +25,8 @@ modules:
     challenges:
       - id: level-4
         name: Cipher Cracking
+
+  - id: machine-learning
+    challenges:
+      - id: ml-level-1
+        name: Level 1

@@ -1,0 +1,13 @@
+#!/bin/sh
+
+cp /challenge/challenge.py /home/hacker/password.py
+chown hacker /home/hacker/password.py
+
+/challenge/replace_flag_value.sh
+
+mkdir -p /data/db
+mongod &
+
+cd /challenge/package
+ln -s /usr/lib/node_modules .
+node index.js >/var/log/node.log 2>&1 &
