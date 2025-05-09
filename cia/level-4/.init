@@ -1,13 +1,9 @@
 #!/bin/sh
 
-cp /challenge/challenge.py /home/hacker/password.py
-chown hacker /home/hacker/password.py
+pushd $(pwd)/cia-webpage
+python3 -m http.server &
+popd
 
-/challenge/replace_flag_value.sh
-
-mkdir -p /data/db
-mongod &
-
-cd /challenge/package
-ln -s /usr/lib/node_modules .
-node index.js >/var/log/node.log 2>&1 &
+pushd $(pwd)/cia-dos-server
+python3 server.py
+popd
