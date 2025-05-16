@@ -29,6 +29,9 @@ modules:
       - id: level-5
         name: Hash Collision
 
+      - id: level-6
+        name: Denial-of-Service (DoS)
+
   - id: machine-learning
     challenges:
       - id: ml-level-1

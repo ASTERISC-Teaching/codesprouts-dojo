@@ -1,6 +1,10 @@
 #!/bin/sh
 
-pushd $(pwd)/cia-webpage
+mkdir -p cia
+cp -r /challenge/* /home/hacker/cia
+chown -R hacker /home/hacker/cia
+
+pushd $(pwd)/cia/cia-webpage
 python3 -m http.server &
 HTTP_PID=$!
 popd
