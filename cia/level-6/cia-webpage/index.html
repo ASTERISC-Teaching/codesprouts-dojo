@@ -54,12 +54,6 @@
   <img id="catImage" src="cat.png" alt="Cat Mascot"/>
   <button id="themeToggle" onclick="toggleTheme()">Light / Dark</button>
 
-  <nav class="nav-bar">
-    <!-- <button onclick="showPage('cipher')">Cipher Challenge</button> -->
-    <!-- <button onclick="showPage('hash')">Hash Collision Game</button> -->
-    <!-- <button onclick="showPage('python')">Python Sandbox</button> -->
-  </nav>
-
   <div id="instructionsButton" onclick="toggleInstructions()">Instructions</div>
 
   <div id="instructionsModal" class="modal">
@@ -70,8 +64,8 @@
   </div>
 
   <!-- PAGE 1: Cipher Challenge -->
-  <!-- <section id="page-cipher">
-    <div class="container">
+  <!-- <section id="page-cipher"> -->
+    <!-- <div class="container">
       <div class="game-header"><h1 class="glitch-title">Substitution Cipher Challenge</h1></div>
       <div class="challenge-section">
         <h2>Challenge #1</h2>
@@ -151,10 +145,10 @@
     </div>
   <!-- </section> -->
 
-  <div class="table-container" style="margin: 0 auto;">
+  <!-- <div class="table-container" style="margin: 0 auto;">
     <textarea placeholder="Enter your text here..."></textarea><br>
     <button type="button">Submit</button>
-  </div>
+  </div> -->
 
   <script src="script.js"></script>
   <script src="https://cdn.jsdelivr.net/pyodide/v0.24.1/full/pyodide.js"></script>
@@ -209,23 +203,11 @@
       `
     };
 
-    let currentPage = "cipher";
-    function showPage(page){
-      currentPage = page;
-      const pages = {cipher:"page-cipher",hash:"page-hash",python:"page-python"};
-      Object.values(pages).forEach(id=>{
-        const el=document.getElementById(id);
-        if(el)el.style.display="none";
-      });
-      document.getElementById(pages[page]).style.display="block";
-    }
-    document.addEventListener("DOMContentLoaded",()=>showPage("cipher"));
-
     function toggleInstructions(){
       const m=document.getElementById("instructionsModal"),
             c=document.getElementById("instructionsContent");
       if(m.style.display==="block"){m.style.display="none";}
-      else{c.innerHTML=pageInstructions[currentPage];m.style.display="block";}
+      else{c.innerHTML=pageInstructions["python"];m.style.display="block";}
     }
     window.onclick=e=>{
       const m=document.getElementById("instructionsModal");

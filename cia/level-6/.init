@@ -1,13 +1,14 @@
 #!/bin/sh
 
-pushd $(pwd)/cia-webpage
+mkdir -p cia
+cp -r /challenge/* /home/hacker/cia
+chown -R hacker /home/hacker/cia
+chgrp -R hacker /home/hacker/cia
+
+cp /flag /home/hacker/cia/cia-webpage/flag
+
+cd /home/hacker/cia/cia-webpage
 python3 -m http.server &
-HTTP_PID=$!
-popd
 
-# Trap Ctrl+C (SIGINT) and kill background job
-trap "echo 'Cleaning up...'; kill $HTTP_PID; exit" INT
-
-pushd $(pwd)/cia-dos-server
-python3 server.py
-popd
+cd /home/hacker/cia/cia-dos-server
+python3 server.py &
