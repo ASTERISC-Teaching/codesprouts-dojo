@@ -3,9 +3,10 @@
 mkdir -p cia
 cp -r /challenge/* /home/hacker/cia
 chown -R hacker /home/hacker/cia
+chgrp -R hacker /home/hacker/cia
 
 pushd /home/hacker/cia/cia-webpage
-python3 -m http.server &
+#python3 -m http.server &
 # HTTP_PID=$!
 popd
 
