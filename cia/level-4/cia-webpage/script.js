@@ -1,3 +1,5 @@
+console.log("Script Loaded");
+
 // Matrix Digital Rain Effect
 const canvas = document.getElementById('matrixCanvas');
 const ctx = canvas.getContext('2d');
@@ -41,28 +43,7 @@ function drawMatrix() {
 }
 setInterval(drawMatrix, 33);
 
-const gameState = {
-  score: 0,
-  currentChallenge: 0,
-  challenges: [
-    {
-      text: "HELLO WORLD THIS IS A SUBSTITUTION CIPHER CHALLENGE",
-      solution: "HELLO WORLD THIS IS A SUBSTITUTION CIPHER CHALLENGE",
-      hint: "The most common letter in English is 'E'. Look for patterns in the text."
-    },
-    {
-      text: "KVJYY PYKBW ZJKW KW H LGHQLKZKZKON WKRYJY QJZJYYFJ",
-      solution: "HELLO WORLD THIS IS A SUBSTITUTION CIPHER CHALLENGE",
-      hint: "Try mapping 'K' to 'H' and see if that helps identify other letters."
-    },
-    {
-      text: "XZWWM VMWJI GZMW MW Z HMWLZGZGZGZM XWMVZW TWMVWZM",
-      solution: "HELLO WORLD THIS IS A SUBSTITUTION CIPHER CHALLENGE",
-      hint: "Look for repeated words like 'IS' and 'A' which are common in English."
-    }
-  ],
-  scoreboard: []
-};
+/////////////////////////// Code for Level 4 //////////////////////////////////
 
 // Letter mappings with Proxy for reactivity
 const letterMappings = new Proxy({}, {
@@ -84,13 +65,6 @@ const wordFrequencies = new Proxy({}, {
     return true;
   }
 });
-
-// Initialize the game
-function initGame() {
-  generateLetterMappings();
-  loadChallenge(gameState.currentChallenge);
-  updateScore();
-}
 
 // Generate letter mapping table
 function generateLetterMappings() {
@@ -131,46 +105,6 @@ function generateLetterMappings() {
   }
   
   tbody.appendChild(row);
-}
-
-// Load a challenge
-function loadChallenge(index) {
-  if (index >= gameState.challenges.length) {
-    document.querySelector('.challenge-section').innerHTML = `
-      <h2>Congratulations!</h2>
-      <p>You've completed all challenges with a score of ${gameState.score}.</p>
-      <button onclick="resetGame()">Play Again</button>
-    `;
-    return;
-  }
-  
-  const challenge = gameState.challenges[index];
-  document.getElementById('challengeText').textContent = challenge.text;
-  document.getElementById('inputText').value = '';
-  document.getElementById('outputText').textContent = '';
-
-  document.getElementById("inputText").value =
-    "R, GSV OVZWVI LU GSV YOZXP WZDM, SZEV ULI BLF Z NRHHRLM LU TIVZG RNKLIGZMXV! " +
-    "DRGS BLFI SVOK, GSRH XRGB, NVTZOLKLORH, DROO UVVO GSV YOZXP WZDM'H QFWTVNVMG. " +
-    "DRGS BLFI SVOK, DV DROO YIRMT ZM VMW GL HLXRVGB ZH DV PMLD RG! GL WL GSRH, " +
-    "BLF DROO KZIGRXRKZGV RM ZM VUULIG GL HZYLGZTV HVXFIRGB, VOVXGIRX KLDVI, " +
-    "YZMPRMT, ZMW ULLW HFKKORVH. R DLFOW ORPV ZOO LU BLF GL WL GSV ULOOLDRMT GZHPH:\n\n" +
-    "URIHGOB, DV DROO HSFG WLDM GSV NVTZOLKLORH KLDVI TIRW. GSV KZHHXLWV ULI GSV " +
-    "KLDVI TIRW HVXFIRGB TZGV RH NVTZKLDVITIRW. RG RH OLXZGVW ZG 12345 M. " +
-    "KLDVI HGZGRLM DZB. GSVIV RH ML LGSVI DZB ZYLFG GSRH; GSVRI HGIVMTGS UILN " +
-    "VOVXGIRXRGB DROO YV GSV URIHG GL UZOO.\n\n" +
-    "HVXLMWOB, DV NFHG YIVZP RMGL GSV NVTZOLKLORH XVMGIZO YZMP. RG RH OLXZGVW " +
-    "LM 654321 D. NLMVB WIREV. DRGS GSVRI NLMVB, R DROO FHV RG GL ZXSRVEV LFI " +
-    "TLZOH! GSVIV ZIV LGSVI IVHLFIXVH GSVIV GSZG DV NFHG GZPV DRGS FH UILN " +
-    "GSV EZFOG. OZHGOB, DV TL GL GSV NVTZOLKLORH XLFIG SLFHV. RG RH OLXZGVW " +
-    "LM 78910 M. TLEVIMNVMG HGIVVG. RG RH SVIV, RM GSV SVZIG LU GSVRI QFHGRXV, " +
-    "GSZG DV DROO NZIP GSV VMW LU GSVRI KLDVI. GSRH DROO MLG LMOB YV HBNYLORX " +
-    "YFG DROO VMHFIV GSV XRGB'H XLOOZKHV UILN DRGSRM. R ZHHFIV BLF, GSRH " +
-    "NRHHRLM RH XIRGRXZO. RG RH LMOB DRGS BLFI XLFIZTV GSZG DV SZEV GSV XSZMXV " +
-    "GL HFXXVVW. YFG IVNVNYVI, GSVIV DROO YV XSZOOVMTVH GSZG BLF NFHG LEVIXLNV. " +
-    "RG RH GSV VMW ULI NVTZOLKLORH YFG GSV YVTRMMRMT ULI FH!";
-  generateLetterMappings();
-  document.getElementById('nextChallenge').classList.add('hidden');
 }
 
 // Update word frequency table
@@ -282,92 +216,40 @@ function analyzeFrequency(text = document.getElementById("inputText").value) {
   updateFrequencyTable();
 }
 
-// Move to next challenge
-function nextChallenge() {
-  gameState.currentChallenge++;
-  loadChallenge(gameState.currentChallenge);
+function initLevel4() {
+  document.getElementById('challengeText').textContent = "HELLO WORLD THIS IS A SUBSTITUTION CIPHER CHALLENGE";
+  document.getElementById('inputText').value = '';
+  document.getElementById('outputText').textContent = '';  
+
+  generateLetterMappings();
+
+  document.getElementById("inputText").value =
+    "R, GSV OVZWVI LU GSV YOZXP WZDM, SZEV ULI BLF Z NRHHRLM LU TIVZG RNKLIGZMXV! " +
+    "DRGS BLFI SVOK, GSRH XRGB, NVTZOLKLORH, DROO UVVO GSV YOZXP WZDM'H QFWTVNVMG. " +
+    "DRGS BLFI SVOK, DV DROO YIRMT ZM VMW GL HLXRVGB ZH DV PMLD RG! GL WL GSRH, " +
+    "BLF DROO KZIGRXRKZGV RM ZM VUULIG GL HZYLGZTV HVXFIRGB, VOVXGIRX KLDVI, " +
+    "YZMPRMT, ZMW ULLW HFKKORVH. R DLFOW ORPV ZOO LU BLF GL WL GSV ULOOLDRMT GZHPH:\n\n" +
+    "URIHGOB, DV DROO HSFG WLDM GSV NVTZOLKLORH KLDVI TIRW. GSV KZHHXLWV ULI GSV " +
+    "KLDVI TIRW HVXFIRGB TZGV RH NVTZKLDVITIRW. RG RH OLXZGVW ZG 12345 M. " +
+    "KLDVI HGZGRLM DZB. GSVIV RH ML LGSVI DZB ZYLFG GSRH; GSVRI HGIVMTGS UILN " +
+    "VOVXGIRXRGB DROO YV GSV URIHG GL UZOO.\n\n" +
+    "HVXLMWOB, DV NFHG YIVZP RMGL GSV NVTZOLKLORH XVMGIZO YZMP. RG RH OLXZGVW " +
+    "LM 654321 D. NLMVB WIREV. DRGS GSVRI NLMVB, R DROO FHV RG GL ZXSRVEV LFI " +
+    "TLZOH! GSVIV ZIV LGSVI IVHLFIXVH GSVIV GSZG DV NFHG GZPV DRGS FH UILN " +
+    "GSV EZFOG. OZHGOB, DV TL GL GSV NVTZOLKLORH XLFIG SLFHV. RG RH OLXZGVW " +
+    "LM 78910 M. TLEVIMNVMG HGIVVG. RG RH SVIV, RM GSV SVZIG LU GSVRI QFHGRXV, " +
+    "GSZG DV DROO NZIP GSV VMW LU GSVRI KLDVI. GSRH DROO MLG LMOB YV HBNYLORX " +
+    "YFG DROO VMHFIV GSV XRGB'H XLOOZKHV UILN DRGSRM. R ZHHFIV BLF, GSRH " +
+    "NRHHRLM RH XIRGRXZO. RG RH LMOB DRGS BLFI XLFIZTV GSZG DV SZEV GSV XSZMXV " +
+    "GL HFXXVVW. YFG IVNVNYVI, GSVIV DROO YV XSZOOVMTVH GSZG BLF NFHG LEVIXLNV. " +
+    "RG RH GSV VMW ULI NVTZOLKLORH YFG GSV YVTRMMRMT ULI FH!";
 }
 
-// Update score display
-function updateScore() {
-  document.getElementById('score').textContent = gameState.score;
-}
+initLevel4();
 
-// Show scoreboard
-function showScoreboard() {
-  const scoreboardContainer = document.getElementById('scoreboardContainer');
-  if (!scoreboardContainer) {
-    const container = document.createElement('div');
-    container.id = 'scoreboardContainer';
-    container.className = 'scoreboard-container';
-    
-    const header = document.createElement('h3');
-    header.textContent = 'Scoreboard';
-    
-    const table = document.createElement('table');
-    table.id = 'scoreboardTable';
-    
-    const thead = document.createElement('thead');
-    thead.innerHTML = `
-      <tr>
-        <th>Challenge</th>
-        <th>Score</th>
-        <th>Hints Used</th>
-        <th>Time</th>
-      </tr>
-    `;
-    
-    const tbody = document.createElement('tbody');
-    tbody.id = 'scoreboardBody';
-    
-    table.appendChild(thead);
-    table.appendChild(tbody);
-    
-    container.appendChild(header);
-    container.appendChild(table);
-    
-    const hintContainer = document.querySelector('.hint-container');
-    hintContainer.parentNode.insertBefore(container, hintContainer.nextSibling);
-  }
-  
-  updateScoreboard();
-}
+//////////////////////////////// Code for Level 5 //////////////////////////////////////////
 
-// Update scoreboard content
-function updateScoreboard() {
-  const tbody = document.getElementById('scoreboardBody');
-  if (!tbody) return;
-  
-  tbody.innerHTML = '';
-  
-  gameState.scoreboard.forEach(entry => {
-    const row = document.createElement('tr');
-    row.innerHTML = `
-      <td>Challenge ${entry.challenge}</td>
-      <td>${entry.score}</td>
-      <td>${entry.hintsUsed}</td>
-      <td>${entry.timestamp}</td>
-    `;
-    tbody.appendChild(row);
-  });
-}
-
-// Reset the game
-function resetGame() {
-  gameState.score = 0;
-  gameState.currentChallenge = 0;
-  gameState.scoreboard = [];
-  
-  const scoreboardContainer = document.getElementById('scoreboardContainer');
-  if (scoreboardContainer) {
-    scoreboardContainer.remove();
-  }
-  
-  updateScore();
-  loadChallenge(0);
-}
-
-// Helper functions
+// // Helper functions
 function isUpperCase(letter) {
   const code = letter.charCodeAt(0);
   return code >= 65 && code <= 90;
@@ -378,148 +260,164 @@ function isLetter(letter) {
   return (code >= 65 && code <= 90) || (code >= 97 && code <= 122);
 }
 
-// Hash function implementation
-function simpleHash(input) {
-  // Convert to lowercase for case-insensitive counting
-  const str = input.toUpperCase();
-  const charCount = {};
+// // Hash function implementation
+// function simpleHash(input) {
+//   // Convert to lowercase for case-insensitive counting
+//   const str = input.toUpperCase();
+//   const charCount = {};
   
-  // Count each character
-  for (let char of str) {
-    if (isLetter(char)) {
-      if(charCount[char]) {
-        charCount[char]++;
-      } else {
-        charCount[char] = 1;
-      }
-    }
-  }
+//   // Count each character
+//   for (let char of str) {
+//     if (isLetter(char)) {
+//       if(charCount[char]) {
+//         charCount[char]++;
+//       } else {
+//         charCount[char] = 1;
+//       }
+//     }
+//   }
   
-  // Sort characters alphabetically
-  const sortedChars = Object.keys(charCount).sort();
+//   // Sort characters alphabetically
+//   const sortedChars = Object.keys(charCount).sort();
   
-  // Build the hash string
-  let hash = '';
-  for (let char of sortedChars) {
-    hash += char + charCount[char];
-  }
+//   // Build the hash string
+//   let hash = '';
+//   for (let char of sortedChars) {
+//     hash += char + charCount[char];
+//   }
   
-  return hash;
-}
+//   return hash;
+// }
 
-// Target hash for collision game
-const TARGET_HASH = 'A59B17C34D23E125F20G24H54I89J2K10L65M24N45O89P20R62S62T110U34V7W39Y24';
+// // Target hash for collision game
+// const TARGET_HASH = 'A59B17C34D23E125F20G24H54I89J2K10L65M24N45O89P20R62S62T110U34V7W39Y24';
 
-// Check hash collision
-function checkHashCollision() {
-  const input = document.getElementById('hashInput').value;
-  const hash = simpleHash(input);
-  document.getElementById('hashOutput').textContent = hash;
+// // Check hash collision
+// function checkHashCollision() {
+//   const input = document.getElementById('hashInput').value;
+//   const hash = simpleHash(input);
+//   document.getElementById('hashOutput').textContent = hash;
   
-  const resultElement = document.getElementById('hashResult');
-  if (hash === TARGET_HASH) {
-    resultElement.textContent = 'Congratulations! You found a hash collision!';
-    resultElement.style.color = '#33ff33';
-    gameState.score += 100;
-    updateScore();
-  } else {
-    resultElement.textContent = 'Not a collision. Try again!';
-    resultElement.style.color = '#ff3333';
-  }
-}
+//   const resultElement = document.getElementById('hashResult');
+//   if (hash === TARGET_HASH) {
+//     resultElement.textContent = 'Congratulations! You found a hash collision!';
+//     resultElement.style.color = '#33ff33';
+//     gameState.score += 100;
+//   } else {
+//     resultElement.textContent = 'Not a collision. Try again!';
+//     resultElement.style.color = '#ff3333';
+//   }
+// }
 
-// Check hash collision
-function updateHash() {
-  const input = document.getElementById('hashInput').value;
-  const hash = simpleHash(input);
-  document.getElementById('hashOutput').textContent = hash;
-}
+// // Check hash collision
+// function updateHash() {
+//   const input = document.getElementById('hashInput').value;
+//   const hash = simpleHash(input);
+//   document.getElementById('hashOutput').textContent = hash;
+// }
 
-// Toggle instructions modal
-function toggleInstructions() {
-  const modal = document.getElementById("instructionsModal");
-  modal.style.display = (modal.style.display === "block") ? "none" : "block";
-}
+// // Toggle instructions modal
+// function toggleInstructions() {
+//   const modal = document.getElementById("instructionsModal");
+//   modal.style.display = (modal.style.display === "block") ? "none" : "block";
+// }
 
-// Close modal when clicking outside
-window.onclick = function(event) {
-  const modal = document.getElementById("instructionsModal");
-  if (event.target === modal) {
-    modal.style.display = "none";
-  }
-};
+// // Close modal when clicking outside
+// window.onclick = function(event) {
+//   const modal = document.getElementById("instructionsModal");
+//   if (event.target === modal) {
+//     modal.style.display = "none";
+//   }
+// };
 
-// Toggle leaderboard display
-function toggleLeaderboard() {
-  const leaderboardContainer = document.getElementById('leaderboardContainer');
-  if (leaderboardContainer) {
-    leaderboardContainer.style.display = leaderboardContainer.style.display === 'block' ? 'none' : 'block';
-  } else {
-    const container = document.createElement('div');
-    container.id = 'leaderboardContainer';
-    container.className = 'leaderboard-container';
+// // Initialize game
+// document.addEventListener('DOMContentLoaded', initGame);
+
+
+///////////////////////// Code for Level 6 /////////////////////////////
+// // Initialize Pyodide
+// let pyodide = null;
+// let isInitialized = false;
+
+// async function initPyodide() {
+//   if (isInitialized) return;
+  
+//   const sandbox = document.querySelector('.python-sandbox');
+//   const loadingIndicator = document.createElement('div');
+//   loadingIndicator.className = 'loading-indicator';
+//   loadingIndicator.textContent = 'Initializing Python environment...';
+//   sandbox.appendChild(loadingIndicator);
+  
+//   try {
+//     pyodide = await loadPyodide();
+//     await pyodide.loadPackage("micropip");
     
-    const header = document.createElement('h3');
-    header.textContent = 'Leaderboard';
-    
-    const table = document.createElement('table');
-    table.id = 'leaderboardTable';
-    
-    const thead = document.createElement('thead');
-    thead.innerHTML = `
-      <tr>
-        <th>Rank</th>
-        <th>Score</th>
-        <th>Time</th>
-      </tr>
-    `;
-    
-    const tbody = document.createElement('tbody');
-    tbody.id = 'leaderboardBody';
-    
-    table.appendChild(thead);
-    table.appendChild(tbody);
-    
-    container.appendChild(header);
-    container.appendChild(table);
-    
-    const scoreboardContainer = document.getElementById('scoreboardContainer');
-    scoreboardContainer.parentNode.insertBefore(container, scoreboardContainer.nextSibling);
-    container.style.display = 'block';
-  }
-  
-  updateLeaderboard();
-}
+//     // Define a helper function to make HTTP calls
+//     // Example usage: 
+//     // res = await send_http_request("http://localhost/api")
+//     await pyodide.runPythonAsync(`
+//       from pyodide.http import pyfetch
 
-function updateLeaderboard() {
-  const tbody = document.getElementById('leaderboardBody');
-  if (!tbody) return;
-  
-  tbody.innerHTML = '';
-  
-  const sortedScores = [...gameState.scoreboard].sort((a, b) => b.score - a.score);
-  
-  sortedScores.forEach((entry, index) => {
-    const row = document.createElement('tr');
-    row.innerHTML = `
-      <td>${index + 1}</td>
-      <td>${entry.score}</td>
-      <td>${entry.timestamp}</td>
-    `;
-    tbody.appendChild(row);
-  });
-}
+//       async def send_http_request(url):
+//           response = await pyfetch(url)  # Await pyfetch directly
+//           return await response.string()  # Return the string content of the response
+//     `);
+//     isInitialized = true;
+//     loadingIndicator.remove();
+//   } catch (error) {
+//     loadingIndicator.textContent = `Error: ${error.message}`;
+//     loadingIndicator.className = 'error-message';
+//   }
+// }
 
-// Initialize game
-document.addEventListener('DOMContentLoaded', initGame);
+// // Run Python code
+// async function runPythonCode() {
+//   if (!isInitialized) {
+//     await initPyodide();
+//   }
+  
+//   const code = document.getElementById('pythonCode').value;
+//   const outputDiv = document.getElementById('pythonOutput');
+  
+//   if (!isInitialized) {
+//     outputDiv.textContent = 'Python environment is still initializing...';
+//     return;
+//   }
+  
+//   try {
+//     // Redirect stdout to our output div
+//     pyodide.runPython(`
+//       import sys
+//       from io import StringIO
+//       sys.stdout = StringIO()
+//     `);
+    
+//     // Run the user's code
+//     await pyodide.runPythonAsync(code);
+    
+//     // Get the output
+//     const output = pyodide.runPython('sys.stdout.getvalue()');
+//     outputDiv.textContent = output;
+//   } catch (error) {
+//     outputDiv.textContent = `Error: ${error.message}`;
+//   }
+// }
 
-// Initialize Pyodide
-let pyodide = null;
-let isInitialized = false;
+// // Clear Python output
+// function clearPythonOutput() {
+//   document.getElementById('pythonOutput').textContent = '';
+// }
 
-async function fetchTextFile(url) {
+// Initialize Pyodide when the sandbox is first interacted with
+// document.getElementById('pythonCode').addEventListener('focus', initPyodide);
+// document.querySelector('.sandbox-controls button').addEventListener('click', initPyodide); 
+
+
+////////////////////////////// Code to read the flag ///////////////////////////////////
+async function getFlag() {
   try {
-    const response = await fetch(url);
+    const fileUrl = 'http://localhost:8000/flag';
+    const response = await fetch(fileUrl);
     if (!response.ok) {
       throw new Error(`Failed to fetch: ${response.status} ${response.statusText}`);
     }
@@ -531,75 +429,17 @@ async function fetchTextFile(url) {
   }
 }
 
-async function initPyodide() {
-  if (isInitialized) return;
-  
-  const sandbox = document.querySelector('.python-sandbox');
-  const loadingIndicator = document.createElement('div');
-  loadingIndicator.className = 'loading-indicator';
-  loadingIndicator.textContent = 'Initializing Python environment...';
-  sandbox.appendChild(loadingIndicator);
-  
-  try {
-    pyodide = await loadPyodide();
-    await pyodide.loadPackage("micropip");
-    
-    // Define a helper function to make HTTP calls
-    // Example usage: 
-    // res = await send_http_request("http://localhost/api")
-    await pyodide.runPythonAsync(`
-      from pyodide.http import pyfetch
-
-      async def send_http_request(url):
-          response = await pyfetch(url)  # Await pyfetch directly
-          return await response.string()  # Return the string content of the response
-    `);
-    isInitialized = true;
-    loadingIndicator.remove();
-  } catch (error) {
-    loadingIndicator.textContent = `Error: ${error.message}`;
-    loadingIndicator.className = 'error-message';
-  }
+function removeWhitespace(str) {
+  return str.replace(/\s+/g, '');
 }
 
-// Run Python code
-async function runPythonCode() {
-  if (!isInitialized) {
-    await initPyodide();
-  }
-  
-  const code = document.getElementById('pythonCode').value;
-  const outputDiv = document.getElementById('pythonOutput');
-  
-  if (!isInitialized) {
-    outputDiv.textContent = 'Python environment is still initializing...';
-    return;
-  }
-  
-  try {
-    // Redirect stdout to our output div
-    pyodide.runPython(`
-      import sys
-      from io import StringIO
-      sys.stdout = StringIO()
-    `);
-    
-    // Run the user's code
-    await pyodide.runPythonAsync(code);
-    
-    // Get the output
-    const output = pyodide.runPython('sys.stdout.getvalue()');
-    outputDiv.textContent = output;
-  } catch (error) {
-    outputDiv.textContent = `Error: ${error.message}`;
-  }
-}
+document.getElementById('flag').addEventListener('click', async () => {
+  const flag = await getFlag();
 
-// Clear Python output
-function clearPythonOutput() {
-  document.getElementById('pythonOutput').textContent = '';
-}
-
-// Initialize Pyodide when the sandbox is first interacted with
-document.getElementById('pythonCode').addEventListener('focus', initPyodide);
-document.querySelector('.sandbox-controls button').addEventListener('click', initPyodide); 
+  const plaintext = "I, THE LEADER OF THE BLACK DAWN, HAVE FOR YOU A MISSION OF GREAT IMPORTANCE! WITH YOUR HELP, THIS CITY, MEGALOPOLIS, WILL FEEL THE BLACK DAWN'S JUDGEMENT. WITH YOUR HELP, WE WILL BRING AN END TO SOCIETY AS WE KNOW IT! TO DO THIS, YOU WILL PARTICIPATE IN AN EFFORT TO SABOTAGE SECURITY, ELECTRIC POWER, BANKING, AND FOOD SUPPLIES. I WOULD LIKE ALL OF YOU TO DO THE FOLLOWING TASKS: FIRSTLY, WE WILL SHUT DOWN THE MEGALOPOLIS POWER GRID. THE PASSCODE FOR THE POWER GRID SECURITY GATE IS MEGAPOWERGRID. IT IS LOCATED AT 12345 N. POWER STATION WAY. THERE IS NO OTHER WAY ABOUT THIS; THEIR STRENGTH FROM ELECTRICITY WILL BE THE FIRST TO FALL. SECONDLY, WE MUST BREAK INTO THE MEGALOPOLIS CENTRAL BANK. IT IS LOCATED ON 654321 W. MONEY DRIVE. WITH THEIR MONEY, I WILL USE IT TO ACHIEVE OUR GOALS! THERE ARE OTHER RESOURCES THERE THAT WE MUST TAKE WITH US FROM THE VAULT. LASTLY, WE GO TO THE MEGALOPOLIS COURT HOUSE. IT IS LOCATED ON 78910 N. GOVERNMENT STREET. IT IS HERE, IN THE HEART OF THEIR JUSTICE, THAT WE WILL MARK THE END OF THEIR POWER. THIS WILL NOT ONLY BE SYMBOLIC BUT WILL ENSURE THE CITY'S COLLAPSE FROM WITHIN. I ASSURE YOU, THIS MISSION IS CRITICAL. IT IS ONLY WITH YOUR COURAGE THAT WE HAVE THE CHANCE TO SUCCEED. BUT REMEMBER, THERE WILL BE CHALLENGES THAT YOU MUST OVERCOME. IT IS THE END FOR MEGALOPOLIS BUT THE BEGINNING FOR US!";
+  const decryptedCiphertext = document.getElementById('decryptedCiphertext').value;
+  console.log("hello");
+  if(removeWhitespace(decryptedCiphertext) == removeWhitespace(plaintext)) {
+    alert(flag);
+  }
+});

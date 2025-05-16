@@ -54,12 +54,6 @@
   <img id="catImage" src="cat.png" alt="Cat Mascot"/>
   <button id="themeToggle" onclick="toggleTheme()">Light / Dark</button>
 
-  <!-- <nav class="nav-bar"> -->
-    <!-- <button onclick="showPage('cipher')">Cipher Challenge</button> -->
-    <!-- <button onclick="showPage('hash')">Hash Collision Game</button> -->
-    <!-- <button onclick="showPage('python')">Python Sandbox</button> -->
-  <!-- </nav> -->
-
   <div id="instructionsButton" onclick="toggleInstructions()">Instructions</div>
 
   <div id="instructionsModal" class="modal">
@@ -152,8 +146,8 @@
   </section> -->
 
   <div class="table-container" style="margin: 0 auto;">
-    <textarea placeholder="Enter your text here..."></textarea><br>
-    <button type="button">Submit</button>
+    <textarea id="decryptedCiphertext" placeholder="Enter your text here..."></textarea><br>
+    <button id="flag" type="button">Submit</button>
   </div>
 
   <script src="script.js"></script>
@@ -208,18 +202,6 @@
         <p>Security note: the sandbox is isolated, but avoid pasting sensitive secrets.</p>
       `
     };
-
-    let currentPage = "cipher";
-    function showPage(page){
-      currentPage = page;
-      const pages = {cipher:"page-cipher",hash:"page-hash",python:"page-python"};
-      Object.values(pages).forEach(id=>{
-        const el=document.getElementById(id);
-        if(el)el.style.display="none";
-      });
-      document.getElementById(pages[page]).style.display="block";
-    }
-    document.addEventListener("DOMContentLoaded",()=>showPage("cipher"));
 
     function toggleInstructions(){
       const m=document.getElementById("instructionsModal"),
