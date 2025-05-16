@@ -367,6 +367,7 @@ async function initPyodide() {
           if(response_str == "SUCCESS"):
             flag = await getFlag();
             alert(flag);
+          return response_str;
     `);
     isInitialized = true;
     loadingIndicator.remove();
