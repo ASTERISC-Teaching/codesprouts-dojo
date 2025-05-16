@@ -25,12 +25,9 @@ modules:
     challenges:
       - id: level-4
         name: Cipher Cracking
-        
+
       - id: level-5
         name: Hash Collision
-
-      - id: level-4
-        name: DoS
 
   - id: machine-learning
     challenges:
