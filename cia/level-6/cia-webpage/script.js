@@ -349,7 +349,9 @@ async function initPyodide() {
   sandbox.appendChild(loadingIndicator);
   
   try {
-    pyodide = await loadPyodide();
+    pyodide = await loadPyodide({
+      indexURL: "pyodide/"
+    });
     await pyodide.loadPackage("micropip");
     
     // Define a helper function to make HTTP calls
