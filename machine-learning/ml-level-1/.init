@@ -3,6 +3,8 @@
 mkdir /home/hacker/pacman
 cp -r /challenge/* /home/hacker/pacman
 
+chown -R hacker /home/hacker/pacman
+
 cd /home/hacker/pacman/
 
 # Open a new terminal from here
