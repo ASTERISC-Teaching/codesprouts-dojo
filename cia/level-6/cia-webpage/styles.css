@@ -620,6 +620,12 @@ button:hover {
 }
 
 /* Python Sandbox styles */
+#python-container {
+  width: 90%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
 .python-sandbox {
   margin-top: 30px;
   padding: 20px;
