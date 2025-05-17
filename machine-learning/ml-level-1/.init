@@ -1,7 +1,4 @@
 #!/bin/sh
 
-mkdir -p pacman
-cp -r /challenge/* /home/hacker/pacman
-chown -R hacker /home/hacker/pacman
-
-/challenge/replace_flag_value.sh
+xfce4-terminal --default-working-directory=/home/hacker/pacman/ &
+GTK_THEME=light gedit /home/hacker/pacman/mysettings.py &
