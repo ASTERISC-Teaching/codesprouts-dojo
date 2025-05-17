@@ -5,8 +5,9 @@ In this challenge, we will be exploring the 3 core principles of cybersecurity (
 ### Instructions
 After you launch each challenge, click on the GUI desktop option to start the challenge, and then go to http://localhost:8000/ to start the activity.
 
-In all the 3 challenges, you will be on the lookout for a flag that looks something like this: 
-Once you complete each challenge, you should see a window pop up with the flag on your browser.
+In all the 3 challenges, you will be on the lookout for a flag that looks something like this: ```pwn.college{kzGwEoiX8wegjBpgYSjtzU.QXKESO2EDLxUDN0QzW}```
+
+Once you complete each challenge, you should see a window pop up with the flag on your browser. You need to submit this flag in the pwn college interface to complete the challenge.
 
 ## Confidentiality: Breaking the Substitution Cipher
 
