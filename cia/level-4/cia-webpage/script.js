@@ -117,7 +117,7 @@ function updateFrequencyTable() {
     if(count > 3) {
       const row = document.createElement("tr");
       const wordCell = document.createElement("td");
-      wordCell.textContent = word;
+      wordCell.textContent = word.toUpperCase();
       wordCell.classList.add("clickable");
       wordCell.onclick = () => highlightWord(word);
       

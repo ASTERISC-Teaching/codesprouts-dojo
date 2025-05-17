@@ -89,7 +89,7 @@
             <tbody></tbody>
           </table>
           <div class="button-row">
-            <button onclick="encrypt()">Encrypt</button>
+            <!-- <button onclick="encrypt()">Encrypt</button> -->
             <button onclick="decrypt()">Decrypt</button>
           </div>
         </div>
@@ -98,7 +98,6 @@
           <table id="wordFrequency">
             <thead><tr><th>Word</th><th>Frequency</th></tr></thead>
             <tbody>
-              <tr><td><span class="clickable" onclick="highlightWord('example')">example</span></td><td>5</td></tr>
             </tbody>
           </table>
         </div>
@@ -146,7 +145,7 @@
   </section> -->
 
   <div class="table-container" style="margin: 0 auto;">
-    <textarea id="decryptedCiphertext" placeholder="Enter your text here..."></textarea><br>
+    <textarea id="decryptedCiphertext" placeholder="Enter your decrypted ciphertext here..."></textarea><br>
     <button id="flag" type="button">Submit</button>
   </div>
 
@@ -159,25 +158,19 @@
       cipher: `
         <h2>Instructions</h2>
         <h3>Task 1: Breaking the Substitution Cipher</h3>
-        <p>In cryptography, a substitution cipher is a method of encrypting by which units of plaintext are replaced with ciphertext according to a fixed system.</p>
-        <p>Your task is to break the cipher by:</p>
+        <p><strong>Here are some commonly used words in the English language:</strong></p>
+        <ul>
+          <li>length 1: <code>I</code></li>
+          <li>length 2: <code>IS</code>, <code>WE</code>, <code>TO</code>, <code>IT</code>, <code>OF</code></li>
+          <li>length 3: <code>THE</code>, <code>YOU</code>, <code>FOR</code></li>
+          <li>length 4: <code>WILL</code>, <code>WITH</code>, <code>THIS</code>, <code>THAT</code></li>
+          <li>length 5:  <code>THERE</code>, <code>THEIR</code></li>
+        </ul>
+        <p>Your tasks:</p>
         <ol>
-          <li>Analyzing the frequency of words in the encrypted text</li>
-          <li>Guessing letter mappings based on common words in the English language</li>
+          <li>Analyze the frequency of words in the encrypted text</li>
+          <li>Guess the letter mappings based on common words in the English language</li>
         </ol>
-        <p>Tips:</p>
-        <ul>
-          <li>Check common words like “THE”, “WILL”, “THAT”, etc.</li>
-          <li>Common word endings include <em>-ing</em>, <em>-ed</em>, <em>-tion</em></li>
-        </ul>
-        <p><strong>Most commonly used English words:</strong></p>
-        <ul>
-          <li>length 1: <code>i</code></li>
-          <li>length 2: <code>is</code>, <code>it</code>, <code>to</code>, <code>of</code>, <code>we</code></li>
-          <li>length 3: <code>the</code>, <code>you</code>, <code>for</code></li>
-          <li>length 4: <code>that</code>, <code>this</code>, <code>will</code>, <code>with</code></li>
-          <li>length 5: <code>their</code>, <code>there</code></li>
-        </ul>
       `,
       hash: `
         <h2>Instructions</h2>
@@ -207,7 +200,7 @@
       const m=document.getElementById("instructionsModal"),
             c=document.getElementById("instructionsContent");
       if(m.style.display==="block"){m.style.display="none";}
-      else{c.innerHTML=pageInstructions[currentPage];m.style.display="block";}
+      else{c.innerHTML=pageInstructions["cipher"];m.style.display="block";}
     }
     window.onclick=e=>{
       const m=document.getElementById("instructionsModal");

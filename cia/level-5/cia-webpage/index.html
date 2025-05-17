@@ -159,36 +159,33 @@
       cipher: `
         <h2>Instructions</h2>
         <h3>Task 1: Breaking the Substitution Cipher</h3>
-        <p>In cryptography, a substitution cipher is a method of encrypting by which units of plaintext are replaced with ciphertext according to a fixed system.</p>
-        <p>Your task is to break the cipher by:</p>
+        <p><strong>Here are some commonly used words in the English language:</strong></p>
+        <ul>
+          <li>length 1: <code>I</code></li>
+          <li>length 2: <code>IS</code>, <code>IT</code>, <code>TO</code>, <code>OF</code>, <code>WE</code></li>
+          <li>length 3: <code>THE</code>, <code>YOU</code>, <code>FOR</code></li>
+          <li>length 4: <code>THAT</code>, <code>THIS</code>, <code>WILL</code>, <code>WITH</code></li>
+          <li>length 5: <code>THEIR</code>, <code>THERE</code></li>
+        </ul>
+        <p>Your task is to:</p>
         <ol>
           <li>Analyzing the frequency of words in the encrypted text</li>
           <li>Guessing letter mappings based on common words in the English language</li>
         </ol>
-        <p>Tips:</p>
-        <ul>
-          <li>Check common words like “THE”, “WILL”, “THAT”, etc.</li>
-          <li>Common word endings include <em>-ing</em>, <em>-ed</em>, <em>-tion</em></li>
-        </ul>
-        <p><strong>Most commonly used English words:</strong></p>
-        <ul>
-          <li>length 1: <code>i</code></li>
-          <li>length 2: <code>is</code>, <code>it</code>, <code>to</code>, <code>of</code>, <code>we</code></li>
-          <li>length 3: <code>the</code>, <code>you</code>, <code>for</code></li>
-          <li>length 4: <code>that</code>, <code>this</code>, <code>will</code>, <code>with</code></li>
-          <li>length 5: <code>their</code>, <code>there</code></li>
-        </ul>
       `,
       hash: `
         <h2>Instructions</h2>
         <h3>Hash Collision Game</h3>
         <p>Your goal is to find an input that produces the <strong>same hash value</strong> as the target.</p>
         <ol>
-          <li>Type candidate inputs into the text area.</li>
-          <li>The application shows you the hash produced.</li>
-          <li>Click <em>Check Collision</em> to compare against the target hash.</li>
+          <li>Type random inputs into the text area.</li>
+          <li>You should see the hash output in the text box below.</li>
+          <li>Guess the hash function</li>
+          <li>Modify the decrypted ciphertext to trick the Black Dawn operatives, while keeping the hash unchanged</li>
         </ol>
-        <p>Tip: Small tweaks (adding spaces, punctuation, or incrementing numbers) may help you collide.</p>
+        <br>
+        <strong>Here is the decrypted message from challenge 1</strong>
+        <p>I, THE LEADER OF THE BLACK DAWN, HAVE FOR YOU A MISSION OF GREAT IMPORTANCE! WITH YOUR HELP, THIS CITY, MEGALOPOLIS, WILL FEEL THE BLACK DAWN'S JUDGEMENT. WITH YOUR HELP, WE WILL BRING AN END TO SOCIETY AS WE KNOW IT! TO DO THIS, YOU WILL PARTICIPATE IN AN EFFORT TO SABOTAGE SECURITY, ELECTRIC POWER, BANKING, AND FOOD SUPPLIES. I WOULD LIKE ALL OF YOU TO DO THE FOLLOWING TASKS: FIRSTLY, WE WILL SHUT DOWN THE MEGALOPOLIS POWER GRID. THE PASSCODE FOR THE POWER GRID SECURITY GATE IS MEGAPOWERGRID. IT IS LOCATED AT 12345 N. POWER STATION WAY. THERE IS NO OTHER WAY ABOUT THIS; THEIR STRENGTH FROM ELECTRICITY WILL BE THE FIRST TO FALL. SECONDLY, WE MUST BREAK INTO THE MEGALOPOLIS CENTRAL BANK. IT IS LOCATED ON 654321 W. MONEY DRIVE. WITH THEIR MONEY, I WILL USE IT TO ACHIEVE OUR GOALS! THERE ARE OTHER RESOURCES THERE THAT WE MUST TAKE WITH US FROM THE VAULT. LASTLY, WE GO TO THE MEGALOPOLIS COURT HOUSE. IT IS LOCATED ON 78910 N. GOVERNMENT STREET. IT IS HERE, IN THE HEART OF THEIR JUSTICE, THAT WE WILL MARK THE END OF THEIR POWER. THIS WILL NOT ONLY BE SYMBOLIC BUT WILL ENSURE THE CITY'S COLLAPSE FROM WITHIN. I ASSURE YOU, THIS MISSION IS CRITICAL. IT IS ONLY WITH YOUR COURAGE THAT WE HAVE THE CHANCE TO SUCCEED. BUT REMEMBER, THERE WILL BE CHALLENGES THAT YOU MUST OVERCOME. IT IS THE END FOR MEGALOPOLIS BUT THE BEGINNING FOR US!</p>
       `,
       python: `
         <h2>Instructions</h2>
