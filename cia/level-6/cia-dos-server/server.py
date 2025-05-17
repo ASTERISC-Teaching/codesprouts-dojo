@@ -18,10 +18,8 @@ class RequestHandler(BaseHTTPRequestHandler):
             if get_request_count < THRESHOLD:
                 # response_body = b"Server still up, Try Again :)"
                 response_body = f"[count = {get_request_count}] Server still up, Try Again :)".encode()
-            elif get_request_count == THRESHOLD:
+            elif get_request_count >= THRESHOLD:
                 response_body = b"DoS Successful"
-            else:
-                response_body = b""
 
             self.send_response(200)
             self.send_header("Content-Type", "text/plain")
