@@ -1,47 +1,47 @@
 console.log("Script Loaded");
 
-// Matrix Digital Rain Effect
-const canvas = document.getElementById('matrixCanvas');
-const ctx = canvas.getContext('2d');
+// // Matrix Digital Rain Effect
+// const canvas = document.getElementById('matrixCanvas');
+// const ctx = canvas.getContext('2d');
 
-// Set canvas size to window size
-function resizeCanvas() {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-}
-resizeCanvas();
-window.addEventListener('resize', resizeCanvas);
+// // Set canvas size to window size
+// function resizeCanvas() {
+//     canvas.width = window.innerWidth;
+//     canvas.height = window.innerHeight;
+// }
+// resizeCanvas();
+// window.addEventListener('resize', resizeCanvas);
 
-// Characters to use in the rain
-const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%^&*()';
-const fontSize = 14;
-const columns = canvas.width / fontSize;
-const drops = [];
+// // Characters to use in the rain
+// const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%^&*()';
+// const fontSize = 14;
+// const columns = canvas.width / fontSize;
+// const drops = [];
 
-// Initialize drops
-for (let i = 0; i < columns; i++) {
-    drops[i] = 1;
-}
+// // Initialize drops
+// for (let i = 0; i < columns; i++) {
+//     drops[i] = 1;
+// }
 
-// Draw the digital rain
-function drawMatrix() {
-    ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
+// // Draw the digital rain
+// function drawMatrix() {
+//     ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+//     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-    ctx.fillStyle = '#0F0';
-    ctx.font = fontSize + 'px monospace';
+//     ctx.fillStyle = '#0F0';
+//     ctx.font = fontSize + 'px monospace';
 
-    for (let i = 0; i < drops.length; i++) {
-        const char = chars[Math.floor(Math.random() * chars.length)];
-        ctx.fillText(char, i * fontSize, drops[i] * fontSize);
+//     for (let i = 0; i < drops.length; i++) {
+//         const char = chars[Math.floor(Math.random() * chars.length)];
+//         ctx.fillText(char, i * fontSize, drops[i] * fontSize);
 
-        if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
-            drops[i] = 0;
-        }
-        drops[i]++;
-    }
-}
-setInterval(drawMatrix, 33);
+//         if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+//             drops[i] = 0;
+//         }
+//         drops[i]++;
+//     }
+// }
+// setInterval(drawMatrix, 33);
 
 /////////////////////////// Code for Level 4 //////////////////////////////////
 
@@ -268,8 +268,10 @@ async function checkHashCollision() {
   const hash = simpleHash(input);
   document.getElementById('hashOutput').textContent = hash;
   
+  const decryptedCiphertext = "I, THE LEADER OF THE BLACK DAWN, HAVE FOR YOU A MISSION OF GREAT IMPORTANCE! WITH YOUR HELP, THIS CITY, MEGALOPOLIS, WILL FEEL THE BLACK DAWN'S JUDGEMENT. WITH YOUR HELP, WE WILL BRING AN END TO SOCIETY AS WE KNOW IT! TO DO THIS, YOU WILL PARTICIPATE IN AN EFFORT TO SABOTAGE SECURITY, ELECTRIC POWER, BANKING, AND FOOD SUPPLIES. I WOULD LIKE ALL OF YOU TO DO THE FOLLOWING TASKS: FIRSTLY, WE WILL SHUT DOWN THE MEGALOPOLIS POWER GRID. THE PASSCODE FOR THE POWER GRID SECURITY GATE IS MEGAPOWERGRID. IT IS LOCATED AT 12345 N. POWER STATION WAY. THERE IS NO OTHER WAY ABOUT THIS; THEIR STRENGTH FROM ELECTRICITY WILL BE THE FIRST TO FALL. SECONDLY, WE MUST BREAK INTO THE MEGALOPOLIS CENTRAL BANK. IT IS LOCATED ON 654321 W. MONEY DRIVE. WITH THEIR MONEY, I WILL USE IT TO ACHIEVE OUR GOALS! THERE ARE OTHER RESOURCES THERE THAT WE MUST TAKE WITH US FROM THE VAULT. LASTLY, WE GO TO THE MEGALOPOLIS COURT HOUSE. IT IS LOCATED ON 78910 N. GOVERNMENT STREET. IT IS HERE, IN THE HEART OF THEIR JUSTICE, THAT WE WILL MARK THE END OF THEIR POWER. THIS WILL NOT ONLY BE SYMBOLIC BUT WILL ENSURE THE CITY'S COLLAPSE FROM WITHIN. I ASSURE YOU, THIS MISSION IS CRITICAL. IT IS ONLY WITH YOUR COURAGE THAT WE HAVE THE CHANCE TO SUCCEED. BUT REMEMBER, THERE WILL BE CHALLENGES THAT YOU MUST OVERCOME. IT IS THE END FOR MEGALOPOLIS BUT THE BEGINNING FOR US!";
+ 
   const resultElement = document.getElementById('hashResult');
-  if (hash === TARGET_HASH) {
+  if (hash === TARGET_HASH && input != decryptedCiphertext) {
     resultElement.textContent = 'Congratulations! You found a hash collision!';
     resultElement.style.color = '#33ff33';
 

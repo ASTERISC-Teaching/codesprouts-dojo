@@ -301,11 +301,11 @@ button:hover {
   }
 }
 
-@keyframes wiggle {
+/* @keyframes wiggle {
   0%, 100% { transform: rotate(0); }
   25% { transform: rotate(5deg); }
   75% { transform: rotate(-5deg); }
-}
+} */
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
@@ -451,7 +451,7 @@ button:hover {
   }
 }
 
-#matrixCanvas {
+/* #matrixCanvas {
   position: fixed;
   top: 0;
   left: 0;
@@ -459,7 +459,7 @@ button:hover {
   height: 100%;
   z-index: -1;
   background: black;
-}
+} */
 
 .instructions-content h3 {
   font-size: 32px;
@@ -513,7 +513,7 @@ button:hover {
   text-shadow: 4px 0 #00ffff;
   animation: glitch-anim2 2s infinite linear alternate-reverse;
 }
-
+/* 
 @keyframes glitch {
   0% { transform: translate(0); opacity: 1; }
   20% { transform: translate(-5px, 5px); opacity: 0.8; }
@@ -572,10 +572,10 @@ button:hover {
 }
 
 /* Add a flash effect */
-@keyframes flash {
+/* @keyframes flash {
   0%, 100% { opacity: 1; }
   50% { opacity: 0.2; }
-}
+} */
 
 .glitch-title {
   animation: glitch 3s infinite, flash 4s infinite;
@@ -728,8 +728,8 @@ button:hover {
   border-radius: 4px;
 }
 
-@keyframes pulse {
+/* @keyframes pulse {
   0% { opacity: 0.6; }
   50% { opacity: 1; }
   100% { opacity: 0.6; }
-}
+} */
