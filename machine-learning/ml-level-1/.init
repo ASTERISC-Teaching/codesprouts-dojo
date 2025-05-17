@@ -1,4 +1,12 @@
 #!/bin/sh
 
-xfce4-terminal --default-working-directory=/home/hacker/pacman/ &
-GTK_THEME=light gedit /home/hacker/pacman/mysettings.py &
+mkdir /home/hacker/pacman
+cp -r /challenge/* /home/hacker/pacman
+
+cd /home/hacker/pacman/
+
+# Open a new terminal from here
+( cd /home/hacker/pacman/ && xfce4-terminal & )
+
+# Set GTK theme and launch gedit with the file
+GTK_THEME=light gedit mysettings.py &
