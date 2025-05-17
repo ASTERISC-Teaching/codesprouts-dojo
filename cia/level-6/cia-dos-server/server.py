@@ -1,19 +1,25 @@
 from http.server import BaseHTTPRequestHandler, HTTPServer
+import threading
 
 # Global counter for GET requests
 get_request_count = 0
 THRESHOLD = 1000
 
+lock = threading.Lock()
+
 class RequestHandler(BaseHTTPRequestHandler):
     def do_GET(self):
         global get_request_count
-        get_request_count += 1
+        with lock:
+            get_request_count += 1
         print("received request - ", get_request_count)
 
         if get_request_count < THRESHOLD:
-            response_body = b"Response OK"
+            response_body = b"Server still up, Try Again :)"
+        elif get_request_count == THRESHOLD:
+            response_body = b"DoS Successful"
         else:
-            response_body = b"SUCCESS"
+            response_body = b""
 
         self.send_response(200)
         self.send_header("Content-Type", "text/plain")

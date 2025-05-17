@@ -1,47 +1,47 @@
 console.log("Script Loaded");
 
-// Matrix Digital Rain Effect
-const canvas = document.getElementById('matrixCanvas');
-const ctx = canvas.getContext('2d');
+// // Matrix Digital Rain Effect
+// const canvas = document.getElementById('matrixCanvas');
+// const ctx = canvas.getContext('2d');
 
-// Set canvas size to window size
-function resizeCanvas() {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-}
-resizeCanvas();
-window.addEventListener('resize', resizeCanvas);
+// // Set canvas size to window size
+// function resizeCanvas() {
+//     canvas.width = window.innerWidth;
+//     canvas.height = window.innerHeight;
+// }
+// resizeCanvas();
+// window.addEventListener('resize', resizeCanvas);
 
-// Characters to use in the rain
-const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%^&*()';
-const fontSize = 14;
-const columns = canvas.width / fontSize;
-const drops = [];
+// // Characters to use in the rain
+// const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%^&*()';
+// const fontSize = 14;
+// const columns = canvas.width / fontSize;
+// const drops = [];
 
-// Initialize drops
-for (let i = 0; i < columns; i++) {
-    drops[i] = 1;
-}
+// // Initialize drops
+// for (let i = 0; i < columns; i++) {
+//     drops[i] = 1;
+// }
 
-// Draw the digital rain
-function drawMatrix() {
-    ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
+// // Draw the digital rain
+// function drawMatrix() {
+//     ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+//     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-    ctx.fillStyle = '#0F0';
-    ctx.font = fontSize + 'px monospace';
+//     ctx.fillStyle = '#0F0';
+//     ctx.font = fontSize + 'px monospace';
 
-    for (let i = 0; i < drops.length; i++) {
-        const char = chars[Math.floor(Math.random() * chars.length)];
-        ctx.fillText(char, i * fontSize, drops[i] * fontSize);
+//     for (let i = 0; i < drops.length; i++) {
+//         const char = chars[Math.floor(Math.random() * chars.length)];
+//         ctx.fillText(char, i * fontSize, drops[i] * fontSize);
 
-        if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
-            drops[i] = 0;
-        }
-        drops[i]++;
-    }
-}
-setInterval(drawMatrix, 33);
+//         if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+//             drops[i] = 0;
+//         }
+//         drops[i]++;
+//     }
+// }
+// setInterval(drawMatrix, 33);
 
 /////////////////////////// Code for Level 4 //////////////////////////////////
 
@@ -364,7 +364,7 @@ async function initPyodide() {
       async def send_http_request(url):
           response = await pyfetch(url)  # Await pyfetch directly
           response_str = await response.string()  # Return the string content of the response
-          if(response_str == "SUCCESS"):
+          if(response_str == "DoS Successful"):
             flag = await getFlag();
             alert(flag);
           return response_str;
