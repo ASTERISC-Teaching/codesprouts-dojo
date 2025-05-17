@@ -5,10 +5,10 @@ cp -r /challenge/* /home/hacker/pacman
 
 chown -R hacker /home/hacker/pacman
 
-cd /home/hacker/pacman/
-
 # Open a new terminal from here
 ( cd /home/hacker/pacman/ && xfce4-terminal & )
+
+cd /home/hacker/pacman/
 
 # Set GTK theme and launch gedit with the file
 GTK_THEME=light gedit mysettings.py &
