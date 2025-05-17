@@ -32,6 +32,10 @@ xfce_run() {
     cd /home/hacker/pacman && xfce_run exo-open --launch TerminalEmulator
 ) &
 
+# Set GTK theme and launch gedit with the file
+cd /home/hacker/pacman/
+GTK_THEME=light gedit mysettings.py &
+
 
 # Open a new terminal from here
 #( cd /home/hacker/pacman/ && xfce4-terminal & )
