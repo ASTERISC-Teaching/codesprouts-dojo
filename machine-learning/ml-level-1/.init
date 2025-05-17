@@ -5,7 +5,7 @@ cp -r /challenge/* /home/hacker/pacman
 
 chown -R hacker /home/hacker/pacman
 
-cd /home/hacker/pacman/
+# cd /home/hacker/pacman/
 
 # Open a new terminal from here
 ( cd /home/hacker/pacman/ && xfce4-terminal & )
