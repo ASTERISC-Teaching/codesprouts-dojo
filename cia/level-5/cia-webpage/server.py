@@ -1,4 +1,4 @@
-from http.server import BaseHTTPRequestHandler, HTTPServer
+from http.server import SimpleHTTPRequestHandler, HTTPServer
 from urllib.parse import urlparse, parse_qs
 
 flag = open('/flag', 'rb').read().strip()
@@ -23,7 +23,7 @@ def simple_hash(input_str):
 
     return hash_str
 
-class RequestHandler(BaseHTTPRequestHandler):
+class RequestHandler(SimpleHTTPRequestHandler):
     def do_GET(self):
         if self.path.startswith("/flag"):
             parsed = urlparse(self.path)
@@ -34,7 +34,7 @@ class RequestHandler(BaseHTTPRequestHandler):
             hash = simple_hash(input)
 
             if hash == TARGET_HASH:
-                response_body = b"Successful Collision - here's your prize: " + flag
+                response_body = flag
             else:
                 response_body = b"Incorrect Hash"
 
