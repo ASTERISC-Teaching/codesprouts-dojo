@@ -1,5 +1,7 @@
-import random
+import os
+os.chdir("/challenge") # So that libraries can load
 
+import random
 random.seed(42)
 
 

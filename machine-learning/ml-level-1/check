@@ -1,7 +1,9 @@
 #!/run/dojo/bin/exec-suid -- /run/dojo/bin/python3 -I
 
-import random
+import os
+os.chdir("/challenge") # So that libraries can load
 
+import random
 random.seed(42)
 
 PER_MOVE = float(input("Per Move: "))
