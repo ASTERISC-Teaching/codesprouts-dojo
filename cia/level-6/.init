@@ -1,8 +1,11 @@
 #!/bin/sh
 
+# Unpack pyodide
 cd /challenge/cia-webpage
 cat pyodide.tar.gz.part* > pyodide.tar.gz
 tar xvf pyodide.tar.gz
+rm pyodide.tar.gz*
+chown -R root ./pyodide
 
 # mkdir -p cia
 # cp -r /challenge/* /home/hacker/cia
