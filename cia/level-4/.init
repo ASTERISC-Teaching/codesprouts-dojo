@@ -1,4 +1,6 @@
 #!/bin/sh
 
+chmod 400 /challenge/plaintext
+
 cd /challenge/cia-webpage
 python3 server.py &
