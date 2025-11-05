@@ -280,7 +280,7 @@ async function checkHashCollision() {
     await new Promise(resolve => setTimeout(resolve, 0));
     
     const flag = await getFlag();
-    alert(flag);
+    resultElement.textContent += `\nHere's your flag: ${flag}`;
   } else {
     resultElement.textContent = 'Not a collision. Try again!';
     resultElement.style.color = '#ff3333';
@@ -394,7 +394,7 @@ function updateHash() {
 ////////////////////////////// Code to read the flag ///////////////////////////////////
 async function getFlag() {
   try {
-    const fileUrl = 'http://localhost:8000/flag';
+    const fileUrl = '/flag';
     const response = await fetch(fileUrl);
     if (!response.ok) {
       throw new Error(`Failed to fetch: ${response.status} ${response.statusText}`);
