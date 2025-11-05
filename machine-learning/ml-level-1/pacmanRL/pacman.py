@@ -818,6 +818,7 @@ def runGames(
     graphics="gui"
 ):
     import __main__
+    import textDisplay
 
     if graphics == "text":
         display = textDisplay.PacmanGraphics()
@@ -831,8 +832,6 @@ def runGames(
         beQuiet = i < numTraining
         if beQuiet:
             # Suppress output and graphics
-            import textDisplay
-
             gameDisplay = textDisplay.NullGraphics()
             rules.quiet = True
         else:
