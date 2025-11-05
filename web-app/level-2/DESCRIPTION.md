@@ -6,4 +6,4 @@ You will need to explore Jenna's home profile, search through posts, and examine
 
 The flag will be a comment in a post about the encrypted messages.
 
-(After starting the challenge the web app can be found at https://pwn.college/workspace/challenge, inside your browser, or, http://challenge.localhost/workspace/challenge inside the VNC Desktop)
+(After starting the challenge the web app can be found at https://pwn.college/workspace/challenge, inside your browser, or, http://challenge.localhost inside the VNC Desktop)
