@@ -47,5 +47,5 @@ if __name__ == "__main__":
     games = run(PacmanRewards(), normalRuns, trainingRuns, grid, graphics)
     wins = [game.state.isWin() for game in games]
     if len(wins) == normalRuns:
-        flag = open("/flag", "r").read()
-        print(f"You won all the games, here's your reward: {flag}")
+        flag = open("/flag", "r").read().strip()
+        print(f"\nYou won all the games, here's your reward: {flag}")
