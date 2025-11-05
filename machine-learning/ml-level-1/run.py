@@ -32,6 +32,7 @@ normalRuns = 10
 trainingRuns = 2000
 grid = "smallGrid"
 # grid = "customGrid"
+# graphics = "null"
 graphics = "text"
 # graphics = "gui"
 

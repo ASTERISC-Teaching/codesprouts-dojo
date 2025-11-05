@@ -39,13 +39,13 @@ class PacmanRewards:
 normalRuns = 10
 trainingRuns = 2000
 grid = "smallGrid"
-graphics = "text"
+graphics = "null"
 
 if __name__ == "__main__":
     from pacmanRL.run_helper import run
 
     games = run(PacmanRewards(), normalRuns, trainingRuns, grid, graphics)
     wins = [game.state.isWin() for game in games]
-    if wins == normalRuns:
+    if len(wins) == normalRuns:
         flag = open("/flag", "r").read()
         print(f"You won all the games, here's your reward: {flag}")

@@ -820,6 +820,8 @@ def runGames(
     import __main__
     import textDisplay
 
+    if graphics == "null":
+        display = textDisplay.NullGraphics()
     if graphics == "text":
         display = textDisplay.PacmanGraphics()
 
