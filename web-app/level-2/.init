@@ -1,10 +1,10 @@
-#!/bin/sh
+# #!/bin/sh
 
-/challenge/replace_flag_value.sh
+# /challenge/replace_flag_value.sh
 
-mkdir -p /data/db
-mongod &
+# mkdir -p /data/db
+# mongod &
 
-cd /challenge/package
-ln -s /usr/lib/node_modules .
-node index.js >/var/log/node.log 2>&1 &
+# cd /challenge/package
+# ln -s /usr/lib/node_modules .
+# node index.js >/var/log/node.log 2>&1 &

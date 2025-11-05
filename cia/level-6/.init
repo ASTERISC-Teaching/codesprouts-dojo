@@ -1,14 +1,14 @@
-#!/bin/sh
+# #!/bin/sh
 
-mkdir -p cia
-cp -r /challenge/* /home/hacker/cia
-chown -R hacker /home/hacker/cia
-chgrp -R hacker /home/hacker/cia
+# mkdir -p cia
+# cp -r /challenge/* /home/hacker/cia
+# chown -R hacker /home/hacker/cia
+# chgrp -R hacker /home/hacker/cia
 
-cp /flag /home/hacker/cia/cia-webpage/flag
+# cp /flag /home/hacker/cia/cia-webpage/flag
 
-cd /home/hacker/cia/cia-webpage
-python3 -m http.server &
+# cd /home/hacker/cia/cia-webpage
+# python3 -m http.server &
 
-cd /home/hacker/cia/cia-dos-server
-python3 server.py &
+# cd /home/hacker/cia/cia-dos-server
+# python3 server.py &
