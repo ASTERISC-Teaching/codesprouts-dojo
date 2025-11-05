@@ -6,7 +6,7 @@ In the terminal window, type:
 ```
 python /challenge/run.py
 ```
-and press Enter. Pac-Man learns based on the numbers you set in **/challenge/run.py**.
+and press Enter. Pac-Man learns based on the numbers you set in **/challenge/run.py**. (If you want to use the GUI graphics, make sure to run the command from the Desktop environment.)
 
 ## How to Get Flag
 
