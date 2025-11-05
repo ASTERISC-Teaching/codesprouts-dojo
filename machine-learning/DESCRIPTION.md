@@ -4,9 +4,9 @@ Welcome! You’ll train Pac-Man by changing reward values.
 
 In the terminal window, type:
 ```
-python /challenge/pacman.py
+python /challenge/run.py
 ```
-and press Enter. Pac-Man learns based on the numbers you set in **/challenge/pacman.py**.
+and press Enter. Pac-Man learns based on the numbers you set in **/challenge/run.py**.
 
 ## How to Get Flag
 
@@ -18,7 +18,7 @@ and press Enter. Then enter the requested numbers, if your AI wins based on the 
 
 ## What You Can Change
 
-In the **/challenge/pacman.py** file there are 4 important rewards you can tweak (technically there is also onEatingGhost, but our examples are not set up for eating ghosts):
+In the **/challenge/run.py** file there are 4 important rewards you can tweak (technically there is also onEatingGhost, but our examples are not set up for eating ghosts):
 
 - `perMove()`
   Reward Pac-Man gets each move.
