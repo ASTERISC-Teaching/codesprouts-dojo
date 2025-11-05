@@ -2,9 +2,6 @@
 
 chmod 400 /challenge/plaintext
 
-/challenge/replace_flag_value.sh
-rm /challenge/replace_flag_value.sh
-
 mkdir -p /data/db
 mongod &
 

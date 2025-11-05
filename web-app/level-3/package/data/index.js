@@ -125,7 +125,7 @@ export const posts = [
 { _id: new mongoose.Types.ObjectId(), userId: userIds[17], firstName: "Ella", lastName: "", location: "Phoenix, AZ", description: "Found Sarah's notebook, but it looks like a page is missing. What was on it, Sarah? 👀", picturePath: "post3.jpeg", userPicturePath: "", likes: new Map([ [userIds[0], true], [userIds[3], true], [userIds[6], true], ]), comments: [ "Missing page, you say? Interesting... Chloe and me might have found something that could crack this whole thing wide open." ], feedVisible: false},
 
 
-{ _id: new mongoose.Types.ObjectId(), userId: userIds[14], firstName: "Chloe", lastName: "", location: "Phoenix, AZ", description: "Look what I found. ", picturePath: "post4.jpeg", userPicturePath: "", likes: new Map([ [userIds[2], true], [userIds[9], true], [userIds[13], true], ]), comments: [ "HERE" ], feedVisible: false },
+{ _id: new mongoose.Types.ObjectId(), userId: userIds[14], firstName: "Chloe", lastName: "", location: "Phoenix, AZ", description: "Look what I found. ", picturePath: "post4.jpeg", userPicturePath: "", likes: new Map([ [userIds[2], true], [userIds[9], true], [userIds[13], true], ]), comments: [ "Not so easy this time!" ], feedVisible: false },
 
 { _id: new mongoose.Types.ObjectId(), userId: userIds[5],
     firstName: "Olivia", lastName: "", location: "Phoenix, AZ", description: "Just finished binge-watching the latest season of Stranger Things. No spoilers, but wow!", picturePath: "", userPicturePath: "", likes: new Map([ [userIds[3], true], [userIds[7], true], [userIds[15], true], ]), comments: [ "I'm only halfway through! Don't tell me anything!", "I can't wait to watch it. I've heard so many good things.", ], },
