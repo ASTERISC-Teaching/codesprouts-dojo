@@ -1,4 +1,4 @@
-#!/bin/env python3
+#!/run/dojo/bin/exec-suid -- /run/dojo/bin/python3 -I
 
 print ("Desert CodeSprouts (Task 3)")
 
