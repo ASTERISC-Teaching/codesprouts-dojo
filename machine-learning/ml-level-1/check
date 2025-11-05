@@ -1,7 +1,9 @@
 #!/run/dojo/bin/exec-suid -- /run/dojo/bin/python3 -I
 
-import os
-os.chdir("/challenge") # So that libraries can load
+# Make it so that libraries can load
+import os, sys
+os.chdir("/challenge")
+sys.path.insert(0, "/challenge")
 
 import random
 random.seed(42)
@@ -19,7 +21,7 @@ class PacmanRewards:
 
     @staticmethod
     def onEatingFood():
-        return ON_EATINGFOOD
+        return ON_EATING_FOOD
 
     @staticmethod
     def onEatingGhost():
