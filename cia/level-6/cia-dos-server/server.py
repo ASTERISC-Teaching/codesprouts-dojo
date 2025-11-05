@@ -7,6 +7,8 @@ THRESHOLD = 1000
 
 lock = threading.Lock()
 
+flag = open('/flag', 'rb').read().strip()
+
 class RequestHandler(BaseHTTPRequestHandler):
     def do_GET(self):
         if self.path == "/communication-server":
@@ -19,7 +21,7 @@ class RequestHandler(BaseHTTPRequestHandler):
                 # response_body = b"Server still up, Try Again :)"
                 response_body = f"[count = {get_request_count}] Server still up, Try Again :)".encode()
             elif get_request_count >= THRESHOLD:
-                response_body = b"DoS Successful"
+                response_body = b"DoS Successful - here's your prize: " + flag
 
             self.send_response(200)
             self.send_header("Content-Type", "text/plain")

@@ -6,16 +6,10 @@ cat pyodide.tar.gz.part* > pyodide.tar.gz
 tar xvf pyodide.tar.gz
 rm pyodide.tar.gz*
 chown -R root ./pyodide
+chmod -R 4755 ./pyodide
 
-# mkdir -p cia
-# cp -r /challenge/* /home/hacker/cia
-# chown -R hacker /home/hacker/cia
-# chgrp -R hacker /home/hacker/cia
+cd /challenge/cia-webpage
+python3 -m http.server &
 
-# cp /flag /home/hacker/cia/cia-webpage/flag
-
-# cd /home/hacker/cia/cia-webpage
-# python3 -m http.server &
-
-# cd /home/hacker/cia/cia-dos-server
-# python3 server.py &
+cd /challenge/cia-dos-server
+python3 server.py &
