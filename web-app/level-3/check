@@ -1,11 +1,13 @@
+#!/bin/env python3
+
 print ("Desert CodeSprouts (Task 3)")
 
-plaintext = "party at main street"
+plaintext = open("/challenge/plaintext", "r").read()
 user_plaintext = input('What is the plaintext? (all lowercase letters and no "!") \n')
 
 if (plaintext == user_plaintext):
-    f = open("/home/hacker/forbidden/flag", "r")
+    flag = open("/flag", "r").read()
     print ("Correct!")
-    print ("The flag is: ", f.read())
+    print ("The flag is: ", fla)
 else:
     print ("Sorry, that's wrong. Please try again!\n")
