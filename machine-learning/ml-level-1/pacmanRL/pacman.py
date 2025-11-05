@@ -815,8 +815,12 @@ def runGames(
     numTraining=0,
     catchExceptions=False,
     timeout=30,
+    graphics="gui"
 ):
     import __main__
+
+    if graphics == "text":
+        display = textDisplay.PacmanGraphics()
 
     __main__.__dict__["_display"] = display
 

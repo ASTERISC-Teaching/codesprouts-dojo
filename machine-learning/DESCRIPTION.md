@@ -1,22 +1,24 @@
 Welcome! You’ll train Pac-Man by changing reward values. 
 
-Hit the **Start** button and select the **GUI Desktop Workspace** option when it pops up.
-
-When you start, two windows open:
-- A text editor showing **mysettings.py** (where you edit rewards)
-- A terminal window (where you run the simulation)
-
-## How to Run
+## How to Test
 
 In the terminal window, type:
+```
+python /challenge/pacman.py
+```
+and press Enter. Pac-Man learns based on the numbers you set in **pacman.py**.
 
-    python mysettings.py
+## How to Get Flag
 
-and press Enter. Pac-Man learns based on the numbers you set in **mysettings.py**.
+In the terminal window, type:
+```
+/challenge/check
+```
+and press Enter. Then enter the requested numbers, if your AI wins based on the provided rewards, you'll get the flag as your prize.
 
 ## What You Can Change
 
-In the **mysettings.py** file there are 4 important rewards you can tweak (technically there is also onEatingGhost, but our examples are not set up for eating ghosts):
+In the **pacman.py** file there are 4 important rewards you can tweak (technically there is also onEatingGhost, but our examples are not set up for eating ghosts):
 
 - `perMove()`
   Reward Pac-Man gets each move.
@@ -32,7 +34,7 @@ You can change the rewards by editing the numbers with the **return** in front o
 ## What to Do
 
 Try your best to make Pac-Man learn by tweaking the rewards.
-  
+
 ## Bonus Challenge (Advanced)
 
 What if we want Pac-Man to learn a more challenging problem? If your Pac-Man AI already learns well on the simple starting example, we can see how well the rewards will hold up in a more difficult example with two ghosts. 

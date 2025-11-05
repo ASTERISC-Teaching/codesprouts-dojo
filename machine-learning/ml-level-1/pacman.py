@@ -30,8 +30,10 @@ normalRuns = 10
 trainingRuns = 2000
 grid = "smallGrid"
 # grid = "customGrid"
+graphics = "text"
+# graphics = "gui"
 
 if __name__ == "__main__":
     from pacmanRL.run_helper import run
 
-    run()
+    run(PacmanRewards(), normalRuns, trainingRuns, grid, graphics)

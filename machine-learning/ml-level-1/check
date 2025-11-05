@@ -1,0 +1,47 @@
+#!/run/dojo/bin/exec-suid -- /run/dojo/bin/python3 -I
+
+import random
+
+random.seed(42)
+
+PER_MOVE = float(input("Per Move: "))
+ON_EATING_FOOD = float(input("On Eating Food: "))
+ON_WIN = float(input("On Win: "))
+ON_LOSS = float(input("On Loss: "))
+
+class PacmanRewards:
+
+    @staticmethod
+    def perMove():
+        return PER_MOVE
+
+    @staticmethod
+    def onEatingFood():
+        return ON_EATINGFOOD
+
+    @staticmethod
+    def onEatingGhost():
+        return 0
+
+    @staticmethod
+    def onWin():
+        return ON_WIN
+
+    @staticmethod
+    def onLoss():
+        return ON_LOSS
+
+
+normalRuns = 10
+trainingRuns = 2000
+grid = "smallGrid"
+graphics = "text"
+
+if __name__ == "__main__":
+    from pacmanRL.run_helper import run
+
+    games = run(PacmanRewards(), normalRuns, trainingRuns, grid, graphics)
+    wins = [game.state.isWin() for game in games]
+    if wins == normalRuns:
+        flag = open("/flag", "r").read()
+        print(f"You won all the games, here's your reward: {flag}")
