@@ -1,0 +1,51 @@
+#!/run/dojo/bin/exec-suid -- /run/dojo/bin/python3 -I
+
+# Make it so that libraries can load
+import os, sys
+os.chdir("/challenge")
+sys.path.insert(0, "/challenge")
+
+import random
+random.seed(42)
+
+PER_MOVE = float(input("Per Move: "))
+ON_EATING_FOOD = float(input("On Eating Food: "))
+ON_WIN = float(input("On Win: "))
+ON_LOSS = float(input("On Loss: "))
+
+class PacmanRewards:
+
+    @staticmethod
+    def perMove():
+        return PER_MOVE
+
+    @staticmethod
+    def onEatingFood():
+        return ON_EATING_FOOD
+
+    @staticmethod
+    def onEatingGhost():
+        return 0
+
+    @staticmethod
+    def onWin():
+        return ON_WIN
+
+    @staticmethod
+    def onLoss():
+        return ON_LOSS
+
+
+normalRuns = 10
+trainingRuns = 2000
+grid = "smallGrid"
+graphics = "null"
+
+if __name__ == "__main__":
+    from pacmanRL.run_helper import run
+
+    games = run(PacmanRewards(), normalRuns, trainingRuns, grid, graphics)
+    wins = [game.state.isWin() for game in games]
+    if len(wins) == normalRuns:
+        flag = open("/flag", "r").read().strip()
+        print(f"\nYou won all the games, here's your reward: {flag}")

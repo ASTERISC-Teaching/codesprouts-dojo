@@ -13,13 +13,14 @@
 
 
 import time
+import sys
 try:
     import pacman
 except:
     pass
 
 DRAW_EVERY = 1
-SLEEP_TIME = 0  # This can be overwritten by __init__
+SLEEP_TIME = 0.2  # This can be overwritten by __init__
 DISPLAY_MOVES = False
 QUIET = False  # Supresses output
 
@@ -35,7 +36,7 @@ class NullGraphics:
         return True
 
     def pause(self):
-        time.sleep(SLEEP_TIME)
+        pass
 
     def draw(self, state):
         print(state)
@@ -54,7 +55,7 @@ class PacmanGraphics:
             SLEEP_TIME = speed
 
     def initialize(self, state, isBlue=False):
-        self.draw(state)
+        self.draw(state, True)
         self.pause()
         self.turn = 0
         self.agentCounter = 0
@@ -78,7 +79,10 @@ class PacmanGraphics:
     def pause(self):
         time.sleep(SLEEP_TIME)
 
-    def draw(self, state):
+    def draw(self, state, first=False):
+        if not first:
+            sys.stdout.write(f"\033[{state.layout.height + 2}A")
+            sys.stdout.flush()
         print(state)
 
     def finish(self):

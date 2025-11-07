@@ -815,8 +815,15 @@ def runGames(
     numTraining=0,
     catchExceptions=False,
     timeout=30,
+    graphics="gui"
 ):
     import __main__
+    import textDisplay
+
+    if graphics == "null":
+        display = textDisplay.NullGraphics()
+    if graphics == "text":
+        display = textDisplay.PacmanGraphics()
 
     __main__.__dict__["_display"] = display
 
@@ -827,8 +834,6 @@ def runGames(
         beQuiet = i < numTraining
         if beQuiet:
             # Suppress output and graphics
-            import textDisplay
-
             gameDisplay = textDisplay.NullGraphics()
             rules.quiet = True
         else:

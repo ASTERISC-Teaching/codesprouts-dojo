@@ -7,14 +7,8 @@ import pacman
 
 sys.path.extend([os.path.join(os.path.dirname(__file__), "..")])
 
-import mysettings
 
-
-def run():
-    rewards = mysettings.PacmanRewards()
-    N_runs = mysettings.normalRuns
-    N_training = mysettings.trainingRuns
-    grid = mysettings.grid
+def run(rewards, N_runs, N_training, grid, graphics):
     args = pacman.readCommand(
         [
             "-p",
@@ -25,4 +19,5 @@ def run():
         ]
     )
     args["rewardfn"] = rewards
-    pacman.runGames(**args)
+    args["graphics"] = graphics
+    return pacman.runGames(**args)

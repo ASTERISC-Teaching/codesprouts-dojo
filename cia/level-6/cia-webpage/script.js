@@ -359,14 +359,10 @@ async function initPyodide() {
     // res = await send_http_request("http://localhost/api")
     await pyodide.runPythonAsync(`
       from pyodide.http import pyfetch
-      from js import getFlag, alert
 
       async def send_http_request(url):
           response = await pyfetch(url)  # Await pyfetch directly
           response_str = await response.string()  # Return the string content of the response
-          if(response_str == "DoS Successful"):
-            flag = await getFlag();
-            alert(flag);
           return response_str;
     `);
     isInitialized = true;
@@ -419,22 +415,6 @@ function clearPythonOutput() {
 document.getElementById('pythonCode').addEventListener('focus', initPyodide);
 document.querySelector('.sandbox-controls button').addEventListener('click', initPyodide); 
 
-
-////////////////////////////// Code to read the flag ///////////////////////////////////
-async function getFlag() {
-  try {
-    const fileUrl = 'http://localhost:8000/flag';
-    const response = await fetch(fileUrl);
-    if (!response.ok) {
-      throw new Error(`Failed to fetch: ${response.status} ${response.statusText}`);
-    }
-    const text = await response.text();
-    return text;
-  } catch (error) {
-    console.error('Error fetching file:', error);
-    return null;
-  }
-}
 
 function removeWhitespace(str) {
   return str.replace(/\s+/g, '');

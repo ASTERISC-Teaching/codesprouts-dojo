@@ -1,9 +1,7 @@
 #!/bin/sh
 
-cp /challenge/challenge.py /home/hacker/password.py
-chown hacker /home/hacker/password.py
-
 /challenge/replace_flag_value.sh
+rm /challenge/replace_flag_value.sh
 
 mkdir -p /data/db
 mongod &

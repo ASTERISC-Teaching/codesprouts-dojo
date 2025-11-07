@@ -272,15 +272,15 @@ async function checkHashCollision() {
  
   const resultElement = document.getElementById('hashResult');
   if (hash === TARGET_HASH && input != decryptedCiphertext) {
-    resultElement.textContent = 'Congratulations! You found a hash collision!';
+    resultElement.innerHTML = 'Congratulations! You found a hash collision!';
     resultElement.style.color = '#33ff33';
 
     // Force full DOM render before blocking alert
     await new Promise(requestAnimationFrame);
     await new Promise(resolve => setTimeout(resolve, 0));
     
-    const flag = await getFlag();
-    alert(flag);
+    const flag = await getFlag(input);
+    resultElement.innerHTML += `<br/>Here's your flag: ${flag}`;
   } else {
     resultElement.textContent = 'Not a collision. Try again!';
     resultElement.style.color = '#ff3333';
@@ -392,10 +392,11 @@ function updateHash() {
 
 
 ////////////////////////////// Code to read the flag ///////////////////////////////////
-async function getFlag() {
+async function getFlag(input) {
   try {
-    const fileUrl = 'http://localhost:8000/flag';
-    const response = await fetch(fileUrl);
+    const baseUrl = document.baseURI;
+    const fileUrl = URL.parse("flag", baseUrl.endsWith("/") ? baseUrl : baseUrl + "/");
+    const response = await fetch(fileUrl + `?input=${input}`);
     if (!response.ok) {
       throw new Error(`Failed to fetch: ${response.status} ${response.statusText}`);
     }
