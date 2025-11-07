@@ -4,4 +4,4 @@ The password is a combination of words and symbols found inside the file located
 
 Your objective is to complete the script, crack this password, and find the flag. This exercise will test your ability to use basic scripting skills to automate the password-cracking process.
 
-(After starting the challenge the web app can be found at https://pwn.college/workspace/challenge, inside your browser, or, http://challenge.localhos inside the VNC Desktop)
+(After starting the challenge the web app can be found at https://pwn.college/workspace/challenge, inside your browser, or, http://challenge.localhost inside the VNC Desktop)
