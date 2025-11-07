@@ -3,8 +3,6 @@
 In this challenge, we will be exploring the 3 core principles of cybersecurity ((C)onfidentiality, (I)ntegrity and (A)vailability), via 3 challenges.
 
 ### Instructions
-After you launch each challenge, click on the GUI desktop option to start the challenge, and then go to http://localhost:8000/ to start the activity.
-
 In all the 3 challenges, you will be on the lookout for a flag that looks something like this: ```pwn.college{kzGwEoiX8wegjBpgYSjtzU.QXKESO2EDLxUDN0QzW}```
 
 Once you complete each challenge, you should see a window pop up with the flag on your browser. You need to submit this flag in the pwn college interface to complete the challenge.
@@ -30,6 +28,6 @@ You task is to send a lof of HTTP requests to the comamnd server. The command se
 
 Note: use the send_http_request() function provided to you to send the request.
 
-You should see a pop up window with the flag once the server is down!
+The server will give out the flag once it is broken!
 
 Thank you for playing the CIA game, and preventing the Black Dawn from taking over the city of Megalopolis! 

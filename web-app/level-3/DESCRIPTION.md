@@ -9,3 +9,5 @@ Once decrypted, you will use the command `/challenge/check` to input the message
 This level will challenge your understanding of basic cryptography and your ability to apply decryption techniques to uncover hidden information.
 
 Good luck!
+
+(After starting the challenge the web app can be found at https://pwn.college/workspace/challenge, inside your browser, or, http://challenge.localhost inside the VNC Desktop)

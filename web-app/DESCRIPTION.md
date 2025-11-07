@@ -8,4 +8,4 @@ In this module, you will progress through three levels:
 2. Gather information from the site.
 3. Decrypt an encrypted message using a Caesar cipher.
 
-(The web app for levels 1 and 2 can be found at https://pwn.college/workspace/challenge, inside your browser, or, http://challenge.localhost inside the VNC Desktop)
+(The web app for all levels can be found at https://pwn.college/workspace/challenge, inside your browser, or, http://challenge.localhost inside the VNC Desktop)
