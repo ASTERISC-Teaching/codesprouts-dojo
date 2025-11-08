@@ -45,7 +45,7 @@ if __name__ == "__main__":
     from pacmanRL.run_helper import run
 
     games = run(PacmanRewards(), normalRuns, trainingRuns, grid, graphics)
-    wins = [game.state.isWin() for game in games]
+    wins = [game.state.isWin() for game in games if game.state.isWin()]
     if len(wins) == normalRuns:
         flag = open("/flag", "r").read().strip()
         print(f"\nYou won all the games, here's your reward: {flag}")
